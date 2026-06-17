@@ -4,13 +4,15 @@
 
 :root {
     --bg:         #0a0a14;
-    --bg2:        #10101e;
-    --bg3:        #161628;
+    --bg2:        #12121f;
+    --bg3:        #1a1a2e;
     --text:       #e4ddd0;
     --text-dim:   #8a8070;
     --gold:       #c8a84c;
     --gold-dim:   #7a6430;
-    --border:     rgba(200, 168, 76, 0.18);
+    --border:     rgba(200, 168, 76, 0.25);
+    --border-dim: rgba(200, 168, 76, 0.1);
+    --nav-h:      64px;
     --f-title:    'Cinzel', serif;
     --f-body:     'Noto Serif KR', serif;
 }
@@ -32,8 +34,9 @@ body {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 99;
-    background: rgba(10, 10, 20, 0.92);
-    backdrop-filter: blur(12px);
+    height: var(--nav-h);
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
 }
 
@@ -41,7 +44,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 2rem;
-    height: 62px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,30 +52,31 @@ body {
 
 .nav-logo {
     font-family: var(--f-title);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--gold);
     text-decoration: none;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2.2rem;
+    gap: 2rem;
 }
 
 .nav-links a {
     color: var(--text-dim);
     text-decoration: none;
     font-size: 0.85rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     transition: color 0.2s;
+    font-family: var(--f-title);
 }
 
 .nav-links a:hover { color: var(--gold); }
 
-/* ── Hero ── */
+/* ── Hero (홈) ── */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -81,18 +85,18 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
-    padding: 80px 2rem 3rem;
+    padding: calc(var(--nav-h) + 2rem) 2rem 4rem;
     background:
-        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(74, 28, 110, 0.35) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(200, 168, 76, 0.06) 0%, transparent 70%);
+        radial-gradient(ellipse 80% 55% at 50% 0%, rgba(74, 28, 110, 0.4) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(200, 168, 76, 0.05) 0%, transparent 70%);
 }
 
 .hero-bg-grid {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(200,168,76,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200,168,76,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(200,168,76,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,168,76,0.05) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
 }
@@ -105,49 +109,59 @@ body {
 
 .hero-eyebrow {
     font-family: var(--f-title);
-    font-size: 0.72rem;
-    letter-spacing: 0.45em;
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
     color: var(--gold);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
 }
 
 .hero-title {
     font-family: var(--f-title);
-    font-size: clamp(3.2rem, 10vw, 6.5rem);
+    font-size: clamp(3.5rem, 10vw, 7rem);
     font-weight: 700;
     letter-spacing: 0.12em;
     line-height: 1;
-    margin-bottom: 1.8rem;
-    background: linear-gradient(135deg, #e8dfc8 0%, var(--gold) 50%, #e8dfc8 100%);
+    margin-bottom: 2rem;
+    background: linear-gradient(160deg, #f0e8d0 0%, var(--gold) 45%, #f0e8d0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: none;
 }
 
 .hero-desc {
     color: var(--text-dim);
     font-size: 1rem;
-    line-height: 1.9;
-    margin-bottom: 2.8rem;
+    line-height: 2;
+    margin-bottom: 3rem;
 }
 
 .hero-btn {
     display: inline-block;
-    padding: 0.75rem 2.2rem;
+    padding: 0.8rem 2.5rem;
     border: 1px solid var(--gold);
     color: var(--gold);
     text-decoration: none;
     font-family: var(--f-title);
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    transition: background 0.25s, color 0.25s;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    transition: all 0.3s;
+    position: relative;
 }
 
-.hero-btn:hover {
+.hero-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
     background: var(--gold);
-    color: var(--bg);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+    z-index: -1;
 }
+
+.hero-btn:hover { color: var(--bg); }
+.hero-btn:hover::before { transform: scaleX(1); }
 
 /* ── Section base ── */
 section {
@@ -163,239 +177,310 @@ section {
 
 .section-header h2 {
     font-family: var(--f-title);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--gold);
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     margin-bottom: 1rem;
 }
 
 .divider {
-    width: 50px;
+    width: 60px;
     height: 1px;
-    background: var(--gold);
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
     margin: 0 auto;
-    opacity: 0.5;
 }
 
 /* ── Map ── */
-.map-section {
-    border-top: 1px solid var(--border);
-}
+.map-section { border-top: 1px solid var(--border-dim); }
 
 .map-frame {
-    max-width: 640px;
+    max-width: 620px;
     margin: 0 auto;
     border: 1px solid var(--border);
     padding: 1rem;
     background: var(--bg2);
+    box-shadow: 0 0 40px rgba(200,168,76,0.05);
 }
 
 .map-frame img {
     width: 100%;
     height: auto;
     display: block;
-    filter: saturate(0.85) brightness(0.95);
+    filter: saturate(0.8) brightness(0.9);
 }
 
-/* ── Nations Grid ── */
-.nations-section {
-    border-top: 1px solid var(--border);
-}
+/* ── Nations Grid (홈) ── */
+.nations-section { border-top: 1px solid var(--border-dim); }
 
 .nations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border-dim);
+    border: 1px solid var(--border-dim);
 }
 
 .nation-card {
     display: block;
-    padding: 1.6rem 1.8rem;
+    padding: 1.8rem;
     background: var(--bg2);
-    border: 1px solid var(--border);
-    border-top: 2px solid var(--c, var(--gold));
+    border-top: 2px solid transparent;
     text-decoration: none;
     color: var(--text);
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    transition: background 0.25s, border-color 0.25s;
+    position: relative;
+}
+
+.nation-card::after {
+    content: '→';
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    color: var(--c, var(--gold));
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    font-size: 0.9rem;
 }
 
 .nation-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border-color: var(--c, var(--gold));
+    background: var(--bg3);
+    border-top-color: var(--c, var(--gold));
+}
+
+.nation-card:hover::after {
+    opacity: 1;
+    transform: translateX(3px);
 }
 
 .nation-mark {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--c, var(--gold));
     display: block;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
 }
 
 .nation-card h3 {
     font-family: var(--f-title);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--c, var(--gold));
+    letter-spacing: 0.05em;
+    color: var(--text);
     margin-bottom: 0.5rem;
+    transition: color 0.2s;
 }
 
+.nation-card:hover h3 { color: var(--c, var(--gold)); }
+
 .nation-card p {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     color: var(--text-dim);
-    line-height: 1.65;
+    line-height: 1.7;
 }
 
 /* ── Quote ── */
 .quote-section {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-dim);
     text-align: center;
 }
 
 .quote-section blockquote {
-    max-width: 680px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 2.5rem 3rem;
     background: var(--bg2);
     border: 1px solid var(--border);
     border-left: 3px solid var(--gold);
     text-align: left;
+    position: relative;
+}
+
+.quote-section blockquote::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-family: var(--f-title);
+    font-size: 4rem;
+    color: var(--gold);
+    opacity: 0.15;
+    line-height: 1;
 }
 
 .quote-section blockquote p {
     font-size: 1rem;
-    line-height: 1.9;
+    line-height: 2;
     color: var(--text);
     font-style: italic;
     margin-bottom: 1.2rem;
 }
 
 .quote-section blockquote cite {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--gold-dim);
     font-style: normal;
     font-family: var(--f-title);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
 }
 
 /* ── Footer ── */
 footer {
     text-align: center;
-    padding: 2.5rem 2rem;
-    border-top: 1px solid var(--border);
-    margin-top: 2rem;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border-dim);
 }
 
 .footer-logo {
     font-family: var(--f-title);
-    font-size: 1.1rem;
-    letter-spacing: 0.2em;
+    font-size: 1rem;
+    letter-spacing: 0.25em;
     color: var(--gold);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
+    opacity: 0.7;
 }
 
 .footer-sub {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--text-dim);
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
 }
 
-/* ── Wiki Pages ── */
+/* ── Page Hero (목록 페이지) ── */
 .page-hero {
-    padding: 120px 2rem 3rem;
+    padding: calc(var(--nav-h) + 3rem) 2rem 3rem;
     text-align: center;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border-dim);
+    margin-bottom: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(74,28,110,0.2) 0%, transparent 70%);
 }
 
 .page-hero h1 {
     font-family: var(--f-title);
     font-size: 2rem;
     color: var(--gold);
-    letter-spacing: 0.15em;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.6rem;
 }
 
-.page-hero p { color: var(--text-dim); font-size: 0.95rem; }
+.page-hero p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+}
 
+/* ── Overview Grid (국가/세력/종족 목록) ── */
 .overview-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.2rem;
+    gap: 1px;
+    background: var(--border-dim);
+    border: 1px solid var(--border-dim);
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem 5rem;
+    margin: 3rem auto 0;
+    padding: 0;
 }
 
 .overview-card {
     display: block;
-    padding: 1.8rem;
+    padding: 2rem;
     background: var(--bg2);
-    border: 1px solid var(--border);
-    border-top: 2px solid var(--c, var(--gold));
+    border-top: 2px solid transparent;
     text-decoration: none;
     color: var(--text);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: background 0.25s, border-color 0.25s;
+    position: relative;
 }
 
 .overview-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: var(--bg3);
+    border-top-color: var(--c, var(--gold));
 }
 
-.overview-card .card-mark {
-    font-size: 1.3rem;
+.overview-card:hover .card-mark { opacity: 1; }
+
+.card-mark {
+    font-size: 1.2rem;
     color: var(--c, var(--gold));
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
     display: block;
+    opacity: 0.7;
+    transition: opacity 0.2s;
 }
 
 .overview-card h3 {
     font-family: var(--f-title);
-    font-size: 0.95rem;
-    color: var(--c, var(--gold));
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 0.6rem;
     letter-spacing: 0.04em;
+    transition: color 0.2s;
 }
 
-.overview-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.65; }
+.overview-card:hover h3 { color: var(--c, var(--gold)); }
 
+.overview-card p {
+    font-size: 0.86rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+}
+
+/* 마지막 행 하단 패딩 */
+.overview-grid + footer,
+.overview-grid ~ footer { margin-top: 4rem; }
+
+/* ── Wiki 개별 페이지 ── */
 .wiki-hero {
-    padding: 120px 2rem 4rem;
-    border-bottom: 1px solid var(--border);
+    padding: calc(var(--nav-h) + 3rem) 2rem 3.5rem;
+    border-bottom: 1px solid var(--border-dim);
     text-align: center;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--c-bg, rgba(74,28,110,0.25)) 0%, transparent 70%);
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--c-bg, rgba(74,28,110,0.22)) 0%, transparent 70%);
 }
 
 .wiki-breadcrumb {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-dim);
     letter-spacing: 0.05em;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    font-family: var(--f-title);
 }
 
-.wiki-breadcrumb a { color: var(--gold-dim); text-decoration: none; }
+.wiki-breadcrumb a {
+    color: var(--gold-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
 .wiki-breadcrumb a:hover { color: var(--gold); }
 
 .wiki-hero h1 {
     font-family: var(--f-title);
-    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: var(--text);
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
+    background: linear-gradient(160deg, #f0e8d0 0%, var(--gold) 50%, #f0e8d0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.wiki-hero .tagline { font-size: 1rem; color: var(--text-dim); font-style: italic; }
+.wiki-hero .tagline {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
 
+/* ── Wiki Body ── */
 .wiki-body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 3rem 2rem 5rem;
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 230px 1fr;
     gap: 3rem;
     align-items: start;
 }
@@ -405,65 +490,92 @@ footer {
     border: 1px solid var(--border);
     padding: 1.4rem;
     position: sticky;
-    top: 80px;
+    top: calc(var(--nav-h) + 1.5rem);
 }
 
 .info-box h3 {
     font-family: var(--f-title);
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
     color: var(--gold);
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border-dim);
 }
 
-.info-box table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
-.info-box th { color: var(--text-dim); font-weight: 400; text-align: left; padding: 0.4rem 0; width: 42%; vertical-align: top; }
-.info-box td { color: var(--text); padding: 0.4rem 0 0.4rem 0.5rem; vertical-align: top; }
-.info-box tr + tr th, .info-box tr + tr td { border-top: 1px solid rgba(200,168,76,0.08); }
+.info-box table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
 
+.info-box th {
+    color: var(--text-dim);
+    font-weight: 400;
+    text-align: left;
+    padding: 0.45rem 0;
+    width: 44%;
+    vertical-align: top;
+    font-family: var(--f-title);
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+}
+
+.info-box td {
+    color: var(--text);
+    padding: 0.45rem 0 0.45rem 0.5rem;
+    vertical-align: top;
+    font-size: 0.84rem;
+}
+
+.info-box tr + tr th,
+.info-box tr + tr td { border-top: 1px solid var(--border-dim); }
+
+/* ── Wiki Content ── */
 .wiki-content h2 {
     font-family: var(--f-title);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--gold);
-    letter-spacing: 0.08em;
-    margin: 2.2rem 0 0.8rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.1em;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-dim);
 }
 
 .wiki-content h2:first-child { margin-top: 0; }
 
 .wiki-content p {
     font-size: 0.95rem;
-    line-height: 1.9;
+    line-height: 1.95;
     color: var(--text);
     margin-bottom: 0.9rem;
 }
 
+.wiki-content strong { color: var(--gold); font-weight: 500; }
+
 .wiki-content .highlight {
     background: var(--bg2);
+    border: 1px solid var(--border-dim);
     border-left: 2px solid var(--gold);
-    padding: 1rem 1.2rem;
-    margin: 1.5rem 0;
+    padding: 1.1rem 1.4rem;
+    margin: 1.8rem 0;
     font-style: italic;
     color: var(--text-dim);
     font-size: 0.92rem;
-    line-height: 1.8;
+    line-height: 1.85;
 }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-    .wiki-body { grid-template-columns: 1fr; }
+    .wiki-body {
+        grid-template-columns: 1fr;
+    }
     .info-box { position: static; }
 }
 
 @media (max-width: 640px) {
     .nav-links { display: none; }
     .hero-desc br { display: none; }
-    .nations-grid { grid-template-columns: 1fr; }
+    .nations-grid { grid-template-columns: 1fr; background: none; border: none; gap: 0.8rem; }
+    .nation-card { border: 1px solid var(--border-dim); border-top: 2px solid var(--c, var(--gold)); }
+    .overview-grid { grid-template-columns: 1fr; background: none; border: none; gap: 0.8rem; }
+    .overview-card { border: 1px solid var(--border-dim); border-top: 2px solid var(--c, var(--gold)); }
     .quote-section blockquote { padding: 1.5rem; }
-    .overview-grid { grid-template-columns: 1fr; }
 }
