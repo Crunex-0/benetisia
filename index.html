@@ -3,126 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BENETISIA — 세계관 아카이브</title>
+    <title>BENETISIA — Official Archive</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
+    <!-- ── HEADER ── -->
     <header class="site-header">
         <nav class="main-nav">
-            <a class="nav-logo" href="index.html">BENETISIA</a>
+            <a class="nav-logo" href="index.html">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                    <polygon points="20,2 38,20 20,38 2,20" stroke="#c8a84c" stroke-width="1.5" fill="none"/>
+                    <polygon points="20,8 32,20 20,32 8,20" stroke="#c8a84c" stroke-width="1" fill="rgba(200,168,76,0.08)"/>
+                    <circle cx="20" cy="20" r="3" fill="#c8a84c"/>
+                </svg>
+                <span class="logo-text">
+                    <span class="logo-main">BENETISIA</span>
+                    <span class="logo-sub">Official Archive</span>
+                </span>
+            </a>
             <ul class="nav-links">
-                <li><a href="nations.html">국가</a></li>
-                <li><a href="factions.html">세력</a></li>
+                <li><a href="lore.html">세계관</a></li>
+                <li><a href="nations.html">국가/세력</a></li>
                 <li><a href="races.html">종족</a></li>
                 <li><a href="characters.html">인물</a></li>
+                <li><a href="guide.html">가이드</a></li>
+                <li><a href="media.html">미디어</a></li>
             </ul>
+            <div class="nav-search">
+                <input type="text" placeholder="검색어를 입력하세요">
+                <button>
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="9" r="6"/><path d="m15 15 4 4"/>
+                    </svg>
+                </button>
+            </div>
         </nav>
     </header>
 
     <main>
 
-        <section class="hero">
-            <div class="hero-bg-grid"></div>
-            <div class="hero-content">
-                <p class="hero-eyebrow">WORLD ARCHIVE</p>
-                <h1 class="hero-title">BENETISIA</h1>
+        <!-- ── HERO BANNER ── -->
+        <section class="hero-banner">
+            <div class="hero-image" style="background-image: url('assets/hero.jpg')">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-text">
+                <p class="hero-eyebrow">기계와 마법, 그리고 이계가 공존하는 대륙</p>
+                <h1>BENETISIA</h1>
                 <p class="hero-desc">
-                    판타지와 기계공학 기술이 발전된 세계에서<br>
-                    과거에 멸망했던 베네티시아와 세상의 비밀을 풀기 위해<br>
-                    각 세력들이 대립하며 밝혀나가는 이야기
+                    혼란기의 끝에서, 새로운 이야기가 시작된다.<br>
+                    베네티시아의 세계를 탐험하고, 당신만의 이야기를 써 내려가세요.
                 </p>
-                <a href="nations.html" class="hero-btn">아카이브 탐색 →</a>
+                <a href="lore.html" class="hero-btn">세계관 알아보기</a>
+            </div>
+            <div class="hero-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
         </section>
 
-        <section class="map-section">
-            <div class="section-header">
-                <h2>대륙 지도</h2>
-                <div class="divider"></div>
+        <!-- ── CONTENT + SIDEBAR ── -->
+        <div class="content-layout">
+
+            <!-- 메인 컨텐츠 -->
+            <div class="content-main">
+
+                <!-- 최신 설정 -->
+                <section class="section-block">
+                    <div class="block-header">
+                        <h2>최신 설정</h2>
+                        <a href="nations.html" class="more-link">더보기 →</a>
+                    </div>
+                    <div class="article-grid">
+
+                        <a href="nations/forbidden.html" class="article-card">
+                            <div class="article-thumb" style="background: linear-gradient(135deg, #1a0a2a, #4a1a6a)">
+                                <span class="article-tag">세계관</span>
+                            </div>
+                            <div class="article-body">
+                                <h3>금지구역</h3>
+                                <p>옛 베네티시아가 잠든 곳. 불안정한 마력으로 결계가 쳐진 봉인된 땅에 대한 기록.</p>
+                                <div class="article-meta">
+                                    <span>세계관 설정</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="nations/glisey.html" class="article-card">
+                            <div class="article-thumb" style="background: linear-gradient(135deg, #0a1a3a, #1a3a6a)">
+                                <span class="article-tag">국가</span>
+                            </div>
+                            <div class="article-body">
+                                <h3>글리세 학회</h3>
+                                <p>지식의 보물을 품는 자들이 모인 곳. 글리세 학회의 모든 것.</p>
+                                <div class="article-meta">
+                                    <span>국가 설정</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="races.html" class="article-card">
+                            <div class="article-thumb" style="background: linear-gradient(135deg, #1a2a0a, #2a5a1a)">
+                                <span class="article-tag">종족</span>
+                            </div>
+                            <div class="article-body">
+                                <h3>종족 소개</h3>
+                                <p>베네티시아 대륙에 존재하는 다양한 종족들과 그들의 특징.</p>
+                                <div class="article-meta">
+                                    <span>종족 설정</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </section>
+
+                <!-- 최근 업데이트 -->
+                <section class="section-block">
+                    <div class="block-header">
+                        <h2>최근 업데이트</h2>
+                        <a href="nations.html" class="more-link">더보기 →</a>
+                    </div>
+                    <ul class="update-list">
+                        <li>
+                            <span class="update-tag tag-world">세계관</span>
+                            <a href="nations/forbidden.html">금지구역 — 결계와 봉인에 대한 추가 기록</a>
+                            <span class="update-time">최근</span>
+                        </li>
+                        <li>
+                            <span class="update-tag tag-nation">국가</span>
+                            <a href="nations/greida.html">그레이다 — 아쿠마구미 조직 정보 추가</a>
+                            <span class="update-time">최근</span>
+                        </li>
+                        <li>
+                            <span class="update-tag tag-nation">국가</span>
+                            <a href="nations/tesmos.html">테스모스 — 블랑콥 축제 정보 추가</a>
+                            <span class="update-time">최근</span>
+                        </li>
+                        <li>
+                            <span class="update-tag tag-faction">세력</span>
+                            <a href="factions.html">세리로프 — 판티닉스 산하 부대 상세 기록</a>
+                            <span class="update-time">최근</span>
+                        </li>
+                        <li>
+                            <span class="update-tag tag-race">종족</span>
+                            <a href="races.html">천사 — 아크뉴엘과의 관계 및 임무 정리</a>
+                            <span class="update-time">최근</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
-            <div class="map-frame">
-                <img src="assets/map.png" alt="베네티시아 대륙 지도">
-            </div>
-        </section>
 
-        <section class="nations-section">
-            <div class="section-header">
-                <h2>국가 & 지역</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="nations-grid">
+            <!-- 사이드바 -->
+            <aside class="content-sidebar">
 
-                <a href="nations/roiram.html" class="nation-card" style="--c:#e07a30">
-                    <span class="nation-mark">⚔</span>
-                    <h3>중앙제국 로이람</h3>
-                    <p>군사력 세계 최강. 평등을 추구하는 여왕의 나라.</p>
-                </a>
+                <!-- 공지사항 -->
+                <div class="sidebar-block">
+                    <div class="sidebar-header">
+                        <h3>공지사항</h3>
+                        <a class="more-link" href="#">더보기 +</a>
+                    </div>
+                    <ul class="notice-list">
+                        <li>
+                            <span class="notice-tag tag-notice">공지</span>
+                            <a href="#">기어 노마드 프로젝트 사전 신청 개시!</a>
+                            <span class="notice-date">최근</span>
+                        </li>
+                        <li>
+                            <span class="notice-tag tag-event">이벤트</span>
+                            <a href="#">글리세 학회 배경음악 업데이트 안내</a>
+                            <span class="notice-date">최근</span>
+                        </li>
+                        <li>
+                            <span class="notice-tag tag-info">안내</span>
+                            <a href="#">베네티시아 세계관 가이드라인 v1.2</a>
+                            <span class="notice-date">최근</span>
+                        </li>
+                        <li>
+                            <span class="notice-tag tag-update">업데이트</span>
+                            <a href="#">국가 설정 추가 업데이트 완료</a>
+                            <span class="notice-date">최근</span>
+                        </li>
+                    </ul>
+                </div>
 
-                <a href="nations/greida.html" class="nation-card" style="--c:#7a3aaa">
-                    <span class="nation-mark">✦</span>
-                    <h3>그레이다</h3>
-                    <p>마녀들과 악마들의 나라. 순수 마법이 발달한 곳.</p>
-                </a>
+                <!-- PC 명단 -->
+                <div class="sidebar-block">
+                    <div class="sidebar-header">
+                        <h3>PC 명단</h3>
+                        <a class="more-link" href="characters.html">더보기 +</a>
+                    </div>
+                    <ul class="pc-list">
+                        <li class="pc-item">
+                            <span class="pc-rank">1</span>
+                            <div class="pc-avatar" style="background:#3a1a5a">✦</div>
+                            <div class="pc-info">
+                                <span class="pc-name">이름 미정</span>
+                                <span class="pc-origin">소속 미정</span>
+                            </div>
+                        </li>
+                        <li class="pc-item">
+                            <span class="pc-rank">2</span>
+                            <div class="pc-avatar" style="background:#1a3a1a">❧</div>
+                            <div class="pc-info">
+                                <span class="pc-name">이름 미정</span>
+                                <span class="pc-origin">소속 미정</span>
+                            </div>
+                        </li>
+                        <li class="pc-item">
+                            <span class="pc-rank">3</span>
+                            <div class="pc-avatar" style="background:#3a1a1a">⚔</div>
+                            <div class="pc-info">
+                                <span class="pc-name">이름 미정</span>
+                                <span class="pc-origin">소속 미정</span>
+                            </div>
+                        </li>
+                        <li class="pc-item">
+                            <span class="pc-rank">4</span>
+                            <div class="pc-avatar" style="background:#1a2a3a">⚙</div>
+                            <div class="pc-info">
+                                <span class="pc-name">이름 미정</span>
+                                <span class="pc-origin">소속 미정</span>
+                            </div>
+                        </li>
+                        <li class="pc-item">
+                            <span class="pc-rank">5</span>
+                            <div class="pc-avatar" style="background:#2a2a1a">◈</div>
+                            <div class="pc-info">
+                                <span class="pc-name">이름 미정</span>
+                                <span class="pc-origin">소속 미정</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-                <a href="nations/tesmos.html" class="nation-card" style="--c:#c9a84c">
-                    <span class="nation-mark">⚙</span>
-                    <h3>테스모스</h3>
-                    <p>오직 무력으로 권력이 결정되는 강자들의 나라.</p>
-                </a>
+                <!-- 바로가기 -->
+                <div class="sidebar-block">
+                    <div class="sidebar-header">
+                        <h3>바로가기</h3>
+                    </div>
+                    <div class="quicklinks">
+                        <a href="guide.html" class="ql-item">
+                            <span class="ql-icon">📖</span>
+                            <span>입문<br>가이드</span>
+                        </a>
+                        <a href="lore.html" class="ql-item">
+                            <span class="ql-icon">📜</span>
+                            <span>용어<br>사전</span>
+                        </a>
+                        <a href="nations.html" class="ql-item">
+                            <span class="ql-icon">🗺</span>
+                            <span>국가<br>지도</span>
+                        </a>
+                        <a href="media.html" class="ql-item">
+                            <span class="ql-icon">🎨</span>
+                            <span>미디어</span>
+                        </a>
+                    </div>
+                </div>
 
-                <a href="nations/banlome.html" class="nation-card" style="--c:#c0392b">
-                    <span class="nation-mark">⚙</span>
-                    <h3>반-로므</h3>
-                    <p>기계 산업이 발달한 국가. 마법을 혐오한다.</p>
-                </a>
+                <!-- 기어 노마드 프로젝트 -->
+                <div class="sidebar-block project-block">
+                    <div class="project-gear">⚙</div>
+                    <h3>프로젝트 — 기어 노마드</h3>
+                    <p>과거의 진실을 찾기 위한 여정에 동참하세요.</p>
+                    <a href="lore.html" class="project-btn">자세히 보기</a>
+                </div>
 
-                <a href="nations/glisey.html" class="nation-card" style="--c:#3a6aaa">
-                    <span class="nation-mark">✎</span>
-                    <h3>글리세 학회</h3>
-                    <p>유명 학자들이 모인 지식의 보고. 엘리트주의의 나라.</p>
-                </a>
-
-                <a href="nations/karda.html" class="nation-card" style="--c:#2a8a5a">
-                    <span class="nation-mark">◈</span>
-                    <h3>카르다</h3>
-                    <p>핍박받은 자들이 세운 나라. 이계와 직접 연결된 곳.</p>
-                </a>
-
-                <a href="nations/losweni.html" class="nation-card" style="--c:#3aaa2a">
-                    <span class="nation-mark">❧</span>
-                    <h3>로스웨니</h3>
-                    <p>중립국. 울창한 숲과 신비한 생물들의 땅.</p>
-                </a>
-
-                <a href="nations/aknewel.html" class="nation-card" style="--c:#8a8aaa">
-                    <span class="nation-mark">✸</span>
-                    <h3>아크뉴엘</h3>
-                    <p>천상의 존재들이 잠들어있다는 전설의 부유섬.</p>
-                </a>
-
-                <a href="nations/forbidden.html" class="nation-card" style="--c:#8a1a5a">
-                    <span class="nation-mark">⊗</span>
-                    <h3>금지구역</h3>
-                    <p>옛 베네티시아의 장소. 불안정한 마력으로 봉인된 곳.</p>
-                </a>
-
-            </div>
-        </section>
-
-        <section class="quote-section">
-            <blockquote>
-                <p>"당신이 무엇을 잃었는지는 모르지만, 무언가를 갈망하고 온 것은 알았기에<br>우리 협회에선 당신들을 공식적으로 지원하기로 한다."</p>
-                <cite>— 글리세 학회, 기어 노마드 프로젝트</cite>
-            </blockquote>
-        </section>
+            </aside>
+        </div>
 
     </main>
 
     <footer>
         <p class="footer-logo">BENETISIA</p>
-        <p class="footer-sub">World Archive</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
     </footer>
 
 </body>
