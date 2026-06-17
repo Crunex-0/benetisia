@@ -302,10 +302,168 @@ footer {
     letter-spacing: 0.15em;
 }
 
+/* ── Wiki Pages ── */
+.page-hero {
+    padding: 120px 2rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+}
+
+.page-hero h1 {
+    font-family: var(--f-title);
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+}
+
+.page-hero p { color: var(--text-dim); font-size: 0.95rem; }
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+}
+
+.overview-card {
+    display: block;
+    padding: 1.8rem;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--c, var(--gold));
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.overview-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.overview-card .card-mark {
+    font-size: 1.3rem;
+    color: var(--c, var(--gold));
+    margin-bottom: 0.7rem;
+    display: block;
+}
+
+.overview-card h3 {
+    font-family: var(--f-title);
+    font-size: 0.95rem;
+    color: var(--c, var(--gold));
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.04em;
+}
+
+.overview-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.65; }
+
+.wiki-hero {
+    padding: 120px 2rem 4rem;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--c-bg, rgba(74,28,110,0.25)) 0%, transparent 70%);
+}
+
+.wiki-breadcrumb {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.wiki-breadcrumb a { color: var(--gold-dim); text-decoration: none; }
+.wiki-breadcrumb a:hover { color: var(--gold); }
+
+.wiki-hero h1 {
+    font-family: var(--f-title);
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    margin-bottom: 0.7rem;
+}
+
+.wiki-hero .tagline { font-size: 1rem; color: var(--text-dim); font-style: italic; }
+
+.wiki-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.info-box {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 1.4rem;
+    position: sticky;
+    top: 80px;
+}
+
+.info-box h3 {
+    font-family: var(--f-title);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-box table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+.info-box th { color: var(--text-dim); font-weight: 400; text-align: left; padding: 0.4rem 0; width: 42%; vertical-align: top; }
+.info-box td { color: var(--text); padding: 0.4rem 0 0.4rem 0.5rem; vertical-align: top; }
+.info-box tr + tr th, .info-box tr + tr td { border-top: 1px solid rgba(200,168,76,0.08); }
+
+.wiki-content h2 {
+    font-family: var(--f-title);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin: 2.2rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.wiki-content h2:first-child { margin-top: 0; }
+
+.wiki-content p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text);
+    margin-bottom: 0.9rem;
+}
+
+.wiki-content .highlight {
+    background: var(--bg2);
+    border-left: 2px solid var(--gold);
+    padding: 1rem 1.2rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
 /* ── Responsive ── */
+@media (max-width: 768px) {
+    .wiki-body { grid-template-columns: 1fr; }
+    .info-box { position: static; }
+}
+
 @media (max-width: 640px) {
     .nav-links { display: none; }
     .hero-desc br { display: none; }
     .nations-grid { grid-template-columns: 1fr; }
     .quote-section blockquote { padding: 1.5rem; }
+    .overview-grid { grid-template-columns: 1fr; }
 }
