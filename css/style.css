@@ -44,11 +44,12 @@ body {
 .main-nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 300px 0 2rem;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .nav-logo {
@@ -356,10 +357,13 @@ footer {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    margin-left: auto;
     flex-shrink: 0;
     padding-left: 1.2rem;
     border-left: 1px solid rgba(200,168,76,0.15);
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .bgm-m-btn {
@@ -456,11 +460,19 @@ footer {
 @media (max-width: 900px) {
     .bgm-m-vol-wrap { display: none; }
     .bgm-m-name { max-width: 90px; }
+    .main-nav { padding-right: 185px; }
 }
 
 @media (max-width: 640px) {
-    .bgm-mini { border-left: none; padding-left: 0; }
+    .bgm-mini {
+        border-left: none;
+        padding-left: 0;
+        position: static;
+        transform: none;
+        margin-left: auto;
+    }
     .bgm-m-name { max-width: 70px; }
+    .main-nav { padding-right: 2rem; }
 }
 
 /* ── Body scroll lock when popup open ── */

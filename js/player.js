@@ -360,14 +360,19 @@
         }
 
         if (S.idx >= tracks.length) S.idx = 0;
+
+        // timeupdate가 au.src 교체 직후 currentTime=0으로 발사되어 S.time을
+        // 덮어쓰는 것을 막기 위해 seek 목표값을 미리 스냅샷
+        const seekTo = S.time;
+
         au.src    = BGM_BASE + tracks[S.idx];
         au.volume = S.muted ? 0 : S.vol;
         au.load();
 
         au.addEventListener('loadedmetadata', function onMeta() {
-            if (S.time > 1) {
+            if (seekTo > 1) {
                 // seek 완료 후 재생 — seek 전에 play하면 0초부터 시작하는 버그 방지
-                au.currentTime = S.time;
+                au.currentTime = seekTo;
                 if (S.playing) {
                     au.addEventListener('seeked', function () {
                         au.play().catch(() => { S.playing = false; writeLS(); });
