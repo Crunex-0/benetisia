@@ -710,6 +710,11 @@ body.bgm-lock { overflow: hidden; }
     border-color: var(--gold-lt);
 }
 
+.bgm-pp-rep {
+    width: 46px;
+    height: 46px;
+}
+
 .bgm-rep-active {
     color: var(--gold-lt) !important;
     border-color: rgba(200,168,76,0.4) !important;

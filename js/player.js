@@ -158,6 +158,13 @@
         renderPopupCtrl();
     }
 
+    // ── Repeat icon SVGs (stroke=currentColor, gray-base) ────────
+    const _SVG_REP = {
+        all:  `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>`,
+        one:  `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/><text x="12" y="14" text-anchor="middle" dominant-baseline="middle" font-size="6" font-weight="700" fill="currentColor" stroke="none" font-family="sans-serif">1</text></svg>`,
+        none: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`
+    };
+
     function fmt(s) {
         if (!s || isNaN(s) || !isFinite(s)) return '0:00';
         const m = Math.floor(s / 60), sec = Math.floor(s % 60);
@@ -262,7 +269,7 @@
     <button class="bgm-pp-btn bgm-pp-prev" title="이전 트랙">⏮</button>
     <button class="bgm-pp-btn bgm-pp-playbig" title="재생 / 일시정지">▶</button>
     <button class="bgm-pp-btn bgm-pp-next" title="다음 트랙">⏭</button>
-    <button class="bgm-pp-btn bgm-pp-rep"  title="반복 모드">🔁</button>
+    <button class="bgm-pp-btn bgm-pp-rep"  title="전체 반복">${_SVG_REP.all}</button>
 </div>
 
 <div class="bgm-pp-volrow">
@@ -319,10 +326,10 @@
         $popup.querySelector('.bgm-pp-vol').value           = Math.round(S.vol * 100);
         $popup.querySelector('.bgm-pp-vollbl').textContent  = Math.round(S.vol * 100) + '%';
 
-        const rmap = { none: ['➡', '반복 없음'], all: ['🔁', '전체 반복'], one: ['🔂', '한 곡 반복'] };
+        const rmap = { none: [_SVG_REP.none, '반복 없음'], all: [_SVG_REP.all, '전체 반복'], one: [_SVG_REP.one, '한 곡 반복'] };
         const [icon, label] = rmap[S.repeat] || rmap.all;
         const rb = $popup.querySelector('.bgm-pp-rep');
-        rb.textContent = icon; rb.title = label;
+        rb.innerHTML = icon; rb.title = label;
         rb.classList.toggle('bgm-rep-active', S.repeat !== 'none');
     }
 
