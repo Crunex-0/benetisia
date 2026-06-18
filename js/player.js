@@ -1,6 +1,6 @@
 /* ============================================================
    BENETISIA BGM Player
-   - Persists state across page navigation via localStorage
+   - Persists state across page navigation via store
    - Auto-advances to next track on end
    - Mini player injected into .main-nav (right side)
    - Full popup opened by clicking track name
@@ -14,13 +14,14 @@
     const TRACKS_URL = SITE + '/bgm/tracks.json';
     const BGM_BASE   = SITE + '/bgm/';
 
-    // ── State persisted in localStorage ─────────────────────────
+    // ── State persisted in store ─────────────────────────
     const LS_KEY = 'bnt_bgm_v1';
+    const store  = sessionStorage;
     let S = { idx: 0, playing: false, muted: false, vol: 0.7, repeat: 'all', time: 0 };
 
     function readLS() {
         try {
-            const saved = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
+            const saved = JSON.parse(store.getItem(LS_KEY) || '{}');
             Object.assign(S, saved);
         } catch (e) {}
         // Clamp volume
@@ -31,14 +32,14 @@
     function writeLS() {
         clearTimeout(_lsTimer);
         _lsTimer = setTimeout(() => {
-            try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) {}
+            try { store.setItem(LS_KEY, JSON.stringify(S)); } catch (e) {}
         }, 250);
     }
 
     function flushLS() {
         clearTimeout(_lsTimer);
         S.time = au.currentTime;
-        try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) {}
+        try { store.setItem(LS_KEY, JSON.stringify(S)); } catch (e) {}
     }
 
     // 페이지 이동 직전 재생 위치 즉시 저장
@@ -339,7 +340,7 @@
 
     // ── Init ─────────────────────────────────────────────────────
     async function init() {
-        const isFirstVisit = (localStorage.getItem(LS_KEY) === null);
+        const isFirstVisit = (store.getItem(LS_KEY) === null);
         readLS();
         // 첫 방문: 0번 트랙 자동재생
         if (isFirstVisit) { S.idx = 0; S.playing = true; S.time = 0; }
