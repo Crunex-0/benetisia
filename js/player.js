@@ -42,8 +42,26 @@
         try { store.setItem(LS_KEY, JSON.stringify(S)); } catch (e) {}
     }
 
-    // 페이지 이동 직전 재생 위치 즉시 저장
-    window.addEventListener('beforeunload', flushLS);
+    // 페이지 이동/숨김 시 재생 위치 저장
+    // pagehide는 beforeunload와 달리 BFCache 진입도 감지함
+    window.addEventListener('pagehide', function(e) {
+        flushLS();
+        if (e.persisted) au.pause(); // BFCache로 들어갈 때 오디오 정지
+    });
+
+    // 뒤로가기/앞으로가기로 BFCache에서 복원될 때 재생 재개
+    window.addEventListener('pageshow', function(e) {
+        if (!e.persisted) return;
+        readLS();
+        if (!S.playing) { renderMini(); return; }
+        const needSeek = au.seekable && au.seekable.length && Math.abs(au.currentTime - S.time) > 1;
+        if (needSeek) au.currentTime = S.time;
+        au.play().catch(function(err) {
+            if (err.name === 'NotAllowedError') scheduleResumeOnInteraction();
+            else { S.playing = false; writeLS(); }
+        });
+        renderMini();
+    });
 
     // ── Audio engine ─────────────────────────────────────────────
     const au = new Audio();
