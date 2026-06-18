@@ -36,13 +36,20 @@ body {
     display: flex;
     align-items: center;
     background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(200,168,76,0.25);
     padding: 0.3rem 0.8rem;
     gap: 0.5rem;
+    transition: border-color 0.2s;
+}
+
+.nav-search:focus-within {
+    border-color: rgba(200,168,76,0.55);
 }
 
 .nav-search input {
-    background: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
     border: none;
     outline: none;
     color: rgba(255,255,255,0.8);
@@ -51,12 +58,13 @@ body {
     width: 120px;
 }
 
+.nav-search input:focus { background: transparent; }
 .nav-search input::placeholder { color: rgba(255,255,255,0.3); }
 
 .nav-search button {
     background: none;
     border: none;
-    color: rgba(255,255,255,0.4);
+    color: rgba(200,168,76,0.5);
     cursor: pointer;
     display: flex;
     align-items: center;
