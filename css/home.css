@@ -20,7 +20,7 @@
     color: rgba(255,255,255,0.8);
     font-size: 0.82rem;
     font-family: var(--f-body);
-    width: 160px;
+    width: 120px;
 }
 
 .nav-search input::placeholder { color: rgba(255,255,255,0.3); }
@@ -77,6 +77,7 @@
     z-index: 2;
     padding: 0 4rem 3.5rem;
     max-width: 580px;
+    margin-left: max(2rem, calc(50vw - 600px + 2rem));
 }
 
 .hero-eyebrow {
@@ -523,7 +524,7 @@
 
 @media (max-width: 640px) {
     .nav-search { display: none; }
-    .hero-text { padding: 0 1.5rem 3rem; }
+    .hero-text { padding: 0 1.5rem 3rem; margin-left: 0; }
     .article-grid { grid-template-columns: 1fr; }
     .content-layout { padding: 1.5rem 1rem 3rem; }
 }

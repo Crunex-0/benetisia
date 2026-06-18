@@ -84,7 +84,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.4rem;
+    gap: 1rem;
 }
 
 .nav-links a {
@@ -384,7 +384,7 @@ footer {
     cursor: pointer;
     font-family: 'Noto Serif KR', serif;
     font-size: 0.7rem;
-    max-width: 130px;
+    max-width: 100px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
