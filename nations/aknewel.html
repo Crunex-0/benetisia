@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,23 @@
     <title>아크뉴엘 — BENETISIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .rel-row { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border-dim); font-size: 0.88rem; }
+        .rel-row:last-child { border-bottom: none; }
+        .rel-nation { min-width: 90px; font-weight: 600; color: var(--text); font-size: 0.84rem; }
+        .rel-status { font-size: 0.68rem; padding: 0.1rem 0.4rem; border: 1px solid; white-space: nowrap; margin-right: 0.4rem; font-family: var(--f-title); letter-spacing: 0.04em; flex-shrink: 0; }
+        .rel-good { color: #1a7a3a; border-color: #a0d8b0; background: #e8f8ee; }
+        .rel-neutral { color: #7a6a1a; border-color: #d8c870; background: #f8f4e0; }
+        .rel-bad { color: #8a1a1a; border-color: #d8a0a0; background: #f8e8e8; }
+        .rel-desc { color: var(--text-dim); font-size: 0.84rem; flex: 1; }
+        .layer-list { list-style: none; margin: 1rem 0; counter-reset: layer; }
+        .layer-item { display: flex; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--border-dim); align-items: flex-start; }
+        .layer-num { font-family: var(--f-title); font-size: 0.72rem; color: var(--gold); min-width: 60px; letter-spacing: 0.04em; flex-shrink: 0; }
+        .layer-desc { font-size: 0.86rem; color: var(--text-dim); line-height: 1.7; }
+        .angel-tier { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--c, var(--gold)); padding: 0.9rem 1rem; margin-bottom: 0.6rem; }
+        .angel-rank { font-family: var(--f-title); font-size: 0.7rem; color: var(--c, var(--gold)); letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+        .angel-desc { font-size: 0.84rem; color: var(--text-dim); line-height: 1.65; }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -34,10 +51,10 @@
         </nav>
     </header>
 
-    <div class="wiki-hero" style="--c-bg: rgba(138,138,170,0.2)">
+    <div class="wiki-hero" style="background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(138,138,200,0.25) 0%, transparent 70%), var(--black);">
         <p class="wiki-breadcrumb"><a href="../nations.html">국가</a> / 아크뉴엘</p>
         <h1>아크뉴엘</h1>
-        <p class="tagline">천사들이 잠든 전설의 부유섬</p>
+        <p class="tagline">천사들이 잠든 전설의 부유섬 — 신의 명령을 기다리는 자들의 성소</p>
     </div>
 
     <div class="wiki-body">
@@ -46,30 +63,73 @@
                 <h3>기본 정보</h3>
                 <table>
                     <tr><th>위치</th><td>동북쪽 부유섬</td></tr>
-                    <tr><th>거주자</th><td>천사</td></tr>
+                    <tr><th>거주자</th><td>천사 (Angel)</td></tr>
                     <tr><th>기후</th><td>베네티시아 멸망 후 한랭화</td></tr>
-                    <tr><th>접근성</th><td>매우 어려움</td></tr>
+                    <tr><th>접근성</th><td>극히 어려움 (조건 필요)</td></tr>
                     <tr><th>현황</th><td>기록 단절</td></tr>
+                    <tr><th>연계 세력</th><td>세리로프 (클리우스 산하)</td></tr>
+                    <tr><th>고위 천사</th><td>디케 샤이노슐저</td></tr>
+                    <tr><th>위험도</th><td>★★★★★ (무단 접근 시)</td></tr>
                 </table>
             </div>
         </aside>
 
         <article class="wiki-content">
+
             <h2>개요</h2>
-            <p>천상의 존재들이 잠들어있다는 전설이 있는 미지의 섬. 동북쪽에 위치한 부유섬으로, 그 안에는 신의 명령을 받고 대기 중인 천사들이 있다.</p>
-            <p>전설로 내려진 존재를 확인하기 위해 많은 모험가들이 찾아가려 하지만, 밝혀진 내용이 거의 없다.</p>
+            <p>천상의 존재들이 잠들어있다는 전설이 있는 미지의 섬. 동북쪽에 위치한 부유섬으로, 그 안에는 신의 명령을 받고 대기 중인 천사들이 있다. 전설로 내려진 존재를 확인하기 위해 많은 모험가들이 찾아가려 하지만, 실제로 아크뉴엘에 발을 들인 것으로 확인된 외부인은 거의 없다.</p>
+            <p>아크뉴엘은 단순한 섬이 아니라 천사들을 위한 <strong>성소(聖所)</strong>다. 천사들은 이곳에서 신의 명령을 기다리며 대기하고 있으며, 그 명령이 무엇인지는 외부에 알려져 있지 않다. 세리로프를 통해 외부 세계와 간접적으로 연결되어 있다.</p>
+            <div class="highlight">아크뉴엘에 접근하려 했던 글리세 학회 탐사대 전원이 섬 주변에서 방향을 잃고 돌아왔다는 기록이 있다. 이후 학회는 공식적으로 아크뉴엘 접근 시도를 중단했다.</div>
+
+            <h2>섬의 층위 구조</h2>
+            <p>아크뉴엘은 구름 위에 떠 있는 섬으로, 내부는 여러 층위로 나뉘어 있다고 알려져 있다. 외부 조사 자료와 세리로프가 흘린 단편적인 정보를 종합한 추정이다.</p>
+            <ul class="layer-list">
+                <li class="layer-item"><span class="layer-num">외부층</span><span class="layer-desc">섬의 외곽 지역. 극한의 한랭 기후와 폭풍이 몰아치며, 접근 자체가 어렵다. 배나 비행선이 이 지역에 가까워지면 원인 불명의 항법 오류가 발생한다.</span></li>
+                <li class="layer-item"><span class="layer-num">중간층</span><span class="layer-desc">눈 덮인 평야. 천사들의 거주 공간이 분산되어 있으며, 잠들어 있는 천사들이 이곳에 산재한다. 빛이 거의 들지 않아 항상 어슴푸레하다.</span></li>
+                <li class="layer-item"><span class="layer-num">내부층</span><span class="layer-desc">섬의 핵심. 거대한 수정 기둥들이 솟아 있으며, 가장 높은 위계의 천사들이 여기서 대기하고 있다고 추정된다. 일반 천사도 접근이 제한된다.</span></li>
+            </ul>
+
+            <h2>천사 위계</h2>
+            <div class="angel-tier" style="--c:#d4c0f0">
+                <div class="angel-rank">상위천사 (세라핌)</div>
+                <div class="angel-desc">내부층에 잠들어 있는 최상위 존재. 직접 목격한 자가 없다. 아크뉴엘의 질서를 통제하는 근원적 존재라고 전해진다.</div>
+            </div>
+            <div class="angel-tier" style="--c:#a0b8e0">
+                <div class="angel-rank">중위천사 (메세인)</div>
+                <div class="angel-desc">신의 명령을 직접 듣고 행동에 옮기는 역할. 현재 대부분 대기 상태이지만, 디케 샤이노슐저처럼 세계로 내려온 존재도 있다.</div>
+            </div>
+            <div class="angel-tier" style="--c:#c8a84c">
+                <div class="angel-rank">하위천사 (가에린)</div>
+                <div class="angel-desc">세상에 나와 세리로프와 같은 조직에서 활동하는 천사들. 위계가 가장 낮지만 인간의 관점에서는 여전히 압도적인 존재다.</div>
+            </div>
+
+            <h2>디케 샤이노슐저</h2>
+            <p>테스모스의 건국자이자 현 수장. 천사 종족으로, 아크뉴엘에서 내려온 중위 천사로 알려져 있다. 신의 명령을 받고 세상에 내려왔다고 주장하지만, 그 명령의 구체적 내용은 불명이다. 이계를 혐오한다는 것이 천사라는 종족적 특성과 연결되는지 여부는 밝혀지지 않았다.</p>
+            <p>디케가 테스모스를 세운 것이 아크뉴엘의 의지에 의한 것인지, 혹은 개인의 결단인지도 논란이 있다. 세리로프는 이 질문에 답하지 않는다.</p>
 
             <h2>기후 변화</h2>
-            <p>본래 따뜻한 장소였지만, 베네티시아 멸망 이후 급격하게 기온이 낮아져 눈이 주기적으로 오고 있다. 혹독해진 날씨 탓에 직접 방문하는 자들의 발걸음이 끊기게 되었다.</p>
+            <p>본래 따뜻한 장소였지만, 베네티시아 멸망 이후 급격하게 기온이 낮아져 눈이 주기적으로 오고 있다. 혹독해진 날씨 탓에 직접 방문하는 자들의 발걸음이 끊기게 되었다. 이 기후 변화가 베네티시아 멸망과 직접적으로 연관이 있는지, 혹은 아크뉴엘 내부 변화의 반영인지는 알 수 없다. 일부 학자들은 천사들이 깊은 잠에 든 것과 연관이 있다고 추측한다.</p>
 
-            <h2>현황</h2>
-            <p>현대 시점에서는 천사들이 직접 내려오지 않기 때문에 기록이 끊겨 있다. 클리우스의 산하 부대 세리로프와 협업 관계에 있는 것으로 알려져 있다.</p>
+            <h2>세리로프와의 연결</h2>
+            <p>아크뉴엘과 외부 세계를 잇는 유일한 창구는 <strong>세리로프</strong>다. 클리우스의 산하 부대이며, 천사들의 의지를 실행하는 조직으로 알려져 있다. 세리로프가 아크뉴엘에 대해 알고 있는 것은 분명하지만, 그 정보를 외부에 공개하지 않는다. 세리로프 소속원들이 아크뉴엘을 방문할 수 있는 조건이 무엇인지도 불명이다.</p>
+
+            <h2>접근 조건</h2>
+            <p>아크뉴엘에 접근할 수 있는 조건은 불명확하지만, 세리로프를 통한 소개가 필요하다는 것이 정설이다. 또한 일부 증언에 따르면 천사의 피가 섞인 존재나 신성력을 가진 존재는 자연스럽게 아크뉴엘이 있는 방향을 감지할 수 있다고도 한다. 기어 노마드 중에서도 아크뉴엘을 목격했다고 주장하는 자들이 있지만, 검증된 사례는 없다.</p>
+
+            <h2>국가 간 관계</h2>
+            <div class="rel-row"><span class="rel-nation">테스모스</span><span class="rel-status rel-neutral">간접 연결</span><span class="rel-desc">디케 샤이노슐저를 통한 연결. 테스모스가 아크뉴엘의 의지를 수행하는 곳인지 불명.</span></div>
+            <div class="rel-row"><span class="rel-nation">로이람</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">세리로프를 통한 간접 연결. 직접 외교 관계 없음.</span></div>
+            <div class="rel-row"><span class="rel-nation">글리세 학회</span><span class="rel-status rel-bad">비협조</span><span class="rel-desc">학회의 접근 시도를 여러 차례 거부. 학술 연구 허가 불가.</span></div>
+
+            <h2>기어 노마드와의 관계</h2>
+            <p>아크뉴엘은 기어 노마드들에게 사실상 접근 불가능한 곳이다. 다만 세리로프를 통해 아크뉴엘과 관련된 의뢰가 간접적으로 내려오는 경우가 있다. 이런 의뢰들은 대개 신성한 유물을 회수하거나, 아크뉴엘의 의지에 반하는 세력을 제거하는 내용이다. 보상은 후하지만, 의뢰의 정확한 출처와 목적은 모호하게 처리된다.</p>
+
         </article>
     </div>
 
     <footer>
         <p class="footer-logo">BENETISIA</p>
-        <p class="footer-sub">Official Archive — World &amp; Character Reference</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
     </footer>
 </body>
 </html>

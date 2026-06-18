@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,21 @@
     <title>카르다 — BENETISIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .rel-row { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border-dim); font-size: 0.88rem; }
+        .rel-row:last-child { border-bottom: none; }
+        .rel-nation { min-width: 90px; font-weight: 600; color: var(--text); font-size: 0.84rem; }
+        .rel-status { font-size: 0.68rem; padding: 0.1rem 0.4rem; border: 1px solid; white-space: nowrap; margin-right: 0.4rem; font-family: var(--f-title); letter-spacing: 0.04em; flex-shrink: 0; }
+        .rel-good { color: #1a7a3a; border-color: #a0d8b0; background: #e8f8ee; }
+        .rel-neutral { color: #7a6a1a; border-color: #d8c870; background: #f8f4e0; }
+        .rel-bad { color: #8a1a1a; border-color: #d8a0a0; background: #f8e8e8; }
+        .rel-desc { color: var(--text-dim); font-size: 0.84rem; flex: 1; }
+        .culture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+        .culture-item { background: var(--bg2); border: 1px solid var(--border); padding: 0.9rem 1rem; }
+        .culture-item h4 { font-family: var(--f-title); font-size: 0.72rem; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+        .culture-item p { font-size: 0.84rem; color: var(--text-dim); line-height: 1.65; margin: 0; }
+        @media (max-width: 640px) { .culture-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -34,10 +49,10 @@
         </nav>
     </header>
 
-    <div class="wiki-hero" style="--c-bg: rgba(42,138,90,0.2)">
+    <div class="wiki-hero" style="background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(42,138,90,0.22) 0%, transparent 70%), var(--black);">
         <p class="wiki-breadcrumb"><a href="../nations.html">국가</a> / 카르다</p>
         <h1>카르다</h1>
-        <p class="tagline">핍박받은 자들이 세운 나라</p>
+        <p class="tagline">핍박받은 자들이 세운 나라 — 이계와 맞닿은 혼혈들의 땅</p>
     </div>
 
     <div class="wiki-body">
@@ -45,29 +60,77 @@
             <div class="info-box">
                 <h3>기본 정보</h3>
                 <table>
+                    <tr><th>위치</th><td>남쪽 내륙</td></tr>
+                    <tr><th>수도</th><td>에이른</td></tr>
+                    <tr><th>화폐</th><td>로렐 (공용) / 현물 교환</td></tr>
+                    <tr><th>정치 체제</th><td>자치 의회 (각 씨족 대표)</td></tr>
                     <tr><th>특징</th><td>수인·혼혈 거주</td></tr>
-                    <tr><th>이계 성향</th><td>직접 연결</td></tr>
-                    <tr><th>주요 시설</th><td>고아원</td></tr>
+                    <tr><th>이계 성향</th><td>직접 연결 (에코 게이트)</td></tr>
+                    <tr><th>주요 시설</th><td>나이트 헤이븐 (고아원)</td></tr>
                     <tr><th>마법사</th><td>암약 중 (비공개)</td></tr>
+                    <tr><th>위험도</th><td>★★★☆☆ (이계 변수)</td></tr>
                 </table>
             </div>
         </aside>
 
         <article class="wiki-content">
+
             <h2>개요</h2>
-            <p>마법사들이 대거 사라지고, 빈 땅에 핍박받은 자들 — 수인 혹은 이계의 혼혈 — 이 세운 나라. 그레이다와 마찬가지로 이계에 대한 영향이 직접적으로 닿아 있다.</p>
+            <p>마법사들이 대거 사라지고, 빈 땅에 핍박받은 자들 — 수인 혹은 이계의 혼혈 — 이 세운 나라. 그레이다와 마찬가지로 이계에 대한 영향이 직접적으로 닿아 있다. 다른 국가들이 이계를 두려워하거나 배척하는 것과 달리, 카르다는 이계와의 공존을 국가 이념으로 삼는다.</p>
+            <p>외부인의 눈에는 혼돈스럽고 불안정한 나라로 비치기도 하지만, 카르다 내부적으로는 수인 씨족들의 오랜 관습법과 이계 존재들과의 묵계가 나름의 질서를 이루고 있다.</p>
 
-            <h2>고아원</h2>
-            <p>고아원이 카르다에 위치해 있으며, 이 지역에 남아있던 마법사들이 이들을 위해 몰래 암약하며 조율하고 있다.</p>
+            <h2>수도 에이른</h2>
+            <p>카르다의 수도 <strong>에이른(Eirn)</strong>은 크지 않지만 여러 종족이 혼재하는 활기찬 도시다. 수인들의 거주 구역, 이계 혼혈들의 지역, 이계의 영향을 받은 자연 지역이 공존한다. 도시 한가운데에는 에코 게이트 근처에서 뿜어져 나오는 엷은 이계 에너지가 항상 감돌아 빛의 입자처럼 보이기도 한다.</p>
+            <p>에이른의 건축물은 수인의 전통 기법으로 지어진 자연 소재 건물이 많으며, 나무와 돌, 이계 재료를 섞어 사용한다. 유리창 대신 반투명 이계 결정체를 사용하는 가옥도 있다.</p>
 
-            <h2>외교</h2>
-            <p>마법 국가로 분류되어 반-로므로부터 무역 금지 선언을 받고 적대 관계에 있다.</p>
+            <h2>에코 게이트</h2>
+            <p>카르다에는 자연 발생한 이계 통로 <strong>에코 게이트(Echo Gate)</strong>가 있다. 이 통로는 완전히 개방되지 않지만 이계 에너지가 끊임없이 새어 나오고, 이계 존재들이 자연스럽게 드나드는 반개방 상태다. 카르다가 이계와 직접 연결되어 있다는 특징의 근본 원인이다.</p>
+            <p>에코 게이트 주변 지역은 카르다 내에서도 특수 구역으로 지정되어 함부로 접근하기 어렵다. 이곳에서는 식물이 이계 에너지를 흡수하여 기묘한 색으로 변이하며, 동물들이 야행성 발광 능력을 갖기도 한다. 글리세 학회에서 이 에코 게이트를 연구하기 위한 접근권을 요청했지만 카르다는 거절하고 있다.</p>
+
+            <h2>나이트 헤이븐</h2>
+            <p>카르다에 위치한 고아원 <strong>나이트 헤이븐(Night Haven)</strong>은 카르다의 가장 중요한 시설이다. 이계 혼혈이거나 수인 혈통이어서 다른 나라에서 배척받은 아이들, 혼란기 이후 부모를 잃은 아이들이 모여드는 곳이다. 현재 관리자는 공개되어 있지 않으며, 이 시설에 관여하는 마법사들이 비밀리에 아이들을 보호하고 있다.</p>
+            <p>나이트 헤이븐은 겉보기에는 평범한 고아원이지만, 특정 조건을 가진 아이들 — 이계 에너지에 반응하거나 이계 능력을 가진 아이들 — 이 의도적으로 수집되고 있다는 소문이 있다. 이에 대해 카르다 당국은 공식적으로 부인한다.</p>
+
+            <h2>수인 씨족 문화</h2>
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <h4>씨족 의회</h4>
+                    <p>각 수인 씨족의 장로가 의회에 참여하여 국가 의사결정을 한다. 씨족마다 독자적인 관습법을 유지하며, 국가 법보다 씨족 법이 우선되는 경우도 있다.</p>
+                </div>
+                <div class="culture-item">
+                    <h4>교환 경제</h4>
+                    <p>카르다의 내부 거래는 현물 교환이 많다. 특히 이계 재료, 이계 생물 소재, 특수 식물 등은 화폐보다 물물교환이 일반적이다.</p>
+                </div>
+                <div class="culture-item">
+                    <h4>자연 신앙</h4>
+                    <p>수인들은 자연의 정령과 이계 존재 사이 어딘가에 있는 "대지의 기억"을 숭배한다. 특정 지형·나무·바위가 신성시되며, 이들을 훼손하는 것은 씨족 간 분쟁의 원인이 된다.</p>
+                </div>
+                <div class="culture-item">
+                    <h4>혼혈 수용</h4>
+                    <p>다른 국가에서 이계 혼혈이나 수인 혼혈이라는 이유로 박해받은 자들이 카르다로 도망오는 경우가 많다. 카르다는 이들을 받아들이는 유일한 나라다.</p>
+                </div>
+            </div>
+
+            <h2>숨은 마법사 네트워크</h2>
+            <p>혼란기 이후 마법사들이 대거 사라졌지만, 카르다에는 여전히 마법사들이 비밀리에 활동하고 있다. 이들은 조직적으로 움직이며 나이트 헤이븐을 지원하고, 이계와의 관계를 조율하는 역할을 한다. 이 마법사 네트워크가 누구의 지시를 받는지, 어디에서 왔는지는 카르다 내에서도 알려져 있지 않다.</p>
+            <p>일부에서는 이 마법사들이 글리세 학회의 비밀 요원이라는 설도 있고, 혼란기 당시 이계로 도망친 마법사들의 후손이라는 설도 있다. 명확한 정체는 불명이다.</p>
+
+            <h2>국가 간 관계</h2>
+            <div class="rel-row"><span class="rel-nation">그레이다</span><span class="rel-status rel-good">우호</span><span class="rel-desc">이계 친화 국가끼리의 연대. 이계 관련 정보 공유. 그레이다의 마녀들이 카르다를 방문하기도 한다.</span></div>
+            <div class="rel-row"><span class="rel-nation">글리세 학회</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">에코 게이트 접근 문제로 긴장. 그러나 이계 연구 공유 이익으로 완전 결렬은 없음.</span></div>
+            <div class="rel-row"><span class="rel-nation">로이람</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">직접 적대 관계 없음. 그레이다와의 연결로 인한 경계심 존재.</span></div>
+            <div class="rel-row"><span class="rel-nation">반-로므</span><span class="rel-status rel-bad">적대</span><span class="rel-desc">마법 국가 분류. 이계 연결로 인해 반-로므가 가장 경계하는 국가 중 하나.</span></div>
+            <div class="rel-row"><span class="rel-nation">테스모스</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">이계 존재의 테스모스 유입 문제로 간헐적 마찰. 공식 관계는 불개입.</span></div>
+
+            <h2>기어 노마드와의 관계</h2>
+            <p>카르다는 기어 노마드들에게 중요한 중간 거점이다. 에코 게이트로 인해 이계 관련 사건이 자주 발생하며, 이를 처리하는 노마드 의뢰가 꾸준히 존재한다. 나이트 헤이븐 관련 조사 의뢰도 종종 올라오지만, 카르다 당국은 이를 공식적으로 의뢰한 적이 없다고 주장한다. 수인 씨족 문화에서 능력 있는 외부인은 환영받으며, 카르다 출신 노마드들은 이계 감지 능력이 높은 편이다.</p>
+
         </article>
     </div>
 
     <footer>
         <p class="footer-logo">BENETISIA</p>
-        <p class="footer-sub">Official Archive — World &amp; Character Reference</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
     </footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,22 @@
     <title>테스모스 — BENETISIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .rel-row { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border-dim); font-size: 0.88rem; }
+        .rel-row:last-child { border-bottom: none; }
+        .rel-nation { min-width: 90px; font-weight: 600; color: var(--text); font-size: 0.84rem; }
+        .rel-status { font-size: 0.68rem; padding: 0.1rem 0.4rem; border: 1px solid; white-space: nowrap; margin-right: 0.4rem; font-family: var(--f-title); letter-spacing: 0.04em; flex-shrink: 0; }
+        .rel-good { color: #1a7a3a; border-color: #a0d8b0; background: #e8f8ee; }
+        .rel-neutral { color: #7a6a1a; border-color: #d8c870; background: #f8f4e0; }
+        .rel-bad { color: #8a1a1a; border-color: #d8a0a0; background: #f8e8e8; }
+        .rel-desc { color: var(--text-dim); font-size: 0.84rem; flex: 1; }
+        .district-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin: 1rem 0; }
+        .district-card { background: var(--bg2); border: 1px solid var(--border); border-top: 2px solid var(--c, var(--gold)); padding: 0.8rem; }
+        .district-num { font-family: var(--f-title); font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.08em; }
+        .district-name { font-size: 0.88rem; color: var(--text); font-weight: 600; margin: 0.2rem 0; }
+        .district-desc { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; }
+        @media (max-width: 640px) { .district-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -34,10 +50,10 @@
         </nav>
     </header>
 
-    <div class="wiki-hero" style="--c-bg: rgba(201,168,76,0.2)">
+    <div class="wiki-hero" style="background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(201,168,76,0.18) 0%, transparent 70%), var(--black);">
         <p class="wiki-breadcrumb"><a href="../nations.html">국가</a> / 테스모스</p>
         <h1>테스모스</h1>
-        <p class="tagline">무력만이 권력이 되는 강자들의 나라</p>
+        <p class="tagline">무력만이 권력이 되는 강자들의 나라 — 혁명으로 태어난 땅</p>
     </div>
 
     <div class="wiki-body">
@@ -46,36 +62,96 @@
                 <h3>기본 정보</h3>
                 <table>
                     <tr><th>위치</th><td>동쪽 대륙</td></tr>
+                    <tr><th>수도</th><td>멘토치 (1구역)</td></tr>
                     <tr><th>화폐</th><td>아온 (지폐)</td></tr>
+                    <tr><th>정치 체제</th><td>무력 지배제 (최강자 통치)</td></tr>
                     <tr><th>구역</th><td>7개 구역</td></tr>
                     <tr><th>건국자</th><td>디케 샤이노슐저</td></tr>
-                    <tr><th>특산</th><td>농업, 축산업</td></tr>
+                    <tr><th>주요 산업</th><td>농업·축산업·무기 제조</td></tr>
+                    <tr><th>전략 가치</th><td>금지구역 유일 육로</td></tr>
+                    <tr><th>위험도</th><td>★★★★☆ (강자 밀집)</td></tr>
                 </table>
             </div>
         </aside>
 
         <article class="wiki-content">
+
             <h2>개요</h2>
-            <p>1차 혼란기 당시, 부패하고 힘을 잃은 나라 렌제스를 무너트리고 멘토챠일이란 집단을 가진 혁명가의 수장 디케 샤이노슐저가 새로운 나라인 테스모스를 선포한다.</p>
-            <p>동쪽 대륙에 위치하고 있으며, 땅이 넓고 평야가 많아 농업과 축산업이 발달했다.</p>
+            <p>1차 혼란기 당시, 부패하고 힘을 잃은 나라 렌제스를 무너트리고 혁명가의 수장 <strong>디케 샤이노슐저</strong>가 새로운 나라인 테스모스를 선포한다. 디케는 멘토챠일이라는 혁명 집단을 이끌고 렌제스의 왕궁을 무너뜨렸으며, 권력은 강한 자가 차지한다는 원칙 아래 새 나라를 세웠다.</p>
+            <p>동쪽 대륙에 위치하고 있으며, 땅이 넓고 평야가 많아 농업과 축산업이 발달했다. 오직 무력만으로 권력이 결정되는 특수한 체제는 대륙 내에서도 가장 독특한 정치 형태로 꼽힌다.</p>
+            <div class="highlight">화폐 <strong>아온(Aon)</strong> — 디케 샤이노슐저의 초상이 그려진 지폐. 테스모스 내에서 통용되며, 외부에서는 물물교환용으로 수집되기도 한다.</div>
+
+            <h2>렌제스의 유산</h2>
+            <p>테스모스가 세워지기 전 이 땅을 지배했던 <strong>렌제스</strong>는 귀족 지배 체제의 전형적인 부패 국가였다. 혼란기에도 귀족들이 백성을 버리고 도망쳤다는 기록이 남아 있으며, 디케의 혁명 이전까지 렌제스 백성들은 이계의 공격과 귀족의 착취 사이에서 이중 고통을 받았다. 현재 수도 멘토치 지하에는 렌제스 시대의 왕궁 유적이 묻혀 있으며, 접근이 금지되어 있다.</p>
 
             <h2>권력 구조</h2>
-            <p>오직 무력만으로 권력이 결정된다. 여러 가지 무기 공장이 많으며, 이능과 사람의 고유 능력이 담긴 무기를 만들어 무기인간을 생산하기도 한다.</p>
-            <p>이계의 영향을 받지만, 이계를 혐오하는 디케 샤이노슐저의 명에 대항하고 있다. 강자들이 모여드는 만큼 많은 나라와 집단들이 감시하고 있다.</p>
+            <p>테스모스의 최고 권력자는 "수장(首長)"이라 불린다. 현재는 건국자 디케 샤이노슐저가 사실상의 최고 권위를 갖지만, 공식적으로는 언제든 더 강한 자가 도전하여 권력을 빼앗을 수 있다. 이 도전은 공식적인 결투 형식으로 이루어지며, 패자는 생명을 보장받는다 — 이것이 테스모스가 최소한의 질서를 유지하는 방식이다.</p>
+            <p>여러 가지 무기 공장이 많으며, 이능과 사람의 고유 능력이 담긴 무기를 만들어 <strong>무기인간</strong>을 생산하기도 한다. 무기인간은 능력이 담긴 무기와 결합된 전투 특화 개체로, 테스모스의 비밀 군사 자산이다.</p>
 
-            <h2>전략적 중요성</h2>
-            <p>금지구역으로 가기 위한 유일한 육지 경로가 테스모스를 지나가기 때문에, 더더욱 여러 세력의 주의를 끌고 있다.</p>
+            <h2>7개 구역</h2>
+            <div class="district-grid">
+                <div class="district-card" style="--c:#c8a84c">
+                    <div class="district-num">1구역</div>
+                    <div class="district-name">멘토치</div>
+                    <div class="district-desc">수도. 수장의 거처와 주요 행정 기관이 위치. 가장 강한 자들이 거주.</div>
+                </div>
+                <div class="district-card" style="--c:#c05030">
+                    <div class="district-num">2구역</div>
+                    <div class="district-name">아르마</div>
+                    <div class="district-desc">무기 공장 밀집 지역. 무기인간 연구 시설이 비밀리에 운영 중.</div>
+                </div>
+                <div class="district-card" style="--c:#5a9a5a">
+                    <div class="district-num">3구역</div>
+                    <div class="district-name">그라나</div>
+                    <div class="district-desc">농업 중심 구역. 테스모스의 풍부한 식량 생산을 담당.</div>
+                </div>
+                <div class="district-card" style="--c:#5a6a9a">
+                    <div class="district-num">4구역</div>
+                    <div class="district-name">포르타</div>
+                    <div class="district-desc">교역 구역. 외부 상인들이 드나드는 유일한 공식 입국 지점.</div>
+                </div>
+                <div class="district-card" style="--c:#8a5a2a">
+                    <div class="district-num">5구역</div>
+                    <div class="district-name">렌테</div>
+                    <div class="district-desc">구 렌제스 귀족 거주지. 현재는 일반민이 거주하며 유적이 산재.</div>
+                </div>
+                <div class="district-card" style="--c:#7a3a7a">
+                    <div class="district-num">6구역</div>
+                    <div class="district-name">오르피</div>
+                    <div class="district-desc">이계인 거주 허용 구역. 이계의 영향을 받는 지역으로 치안이 불안정.</div>
+                </div>
+                <div class="district-card" style="--c:#1a7a7a">
+                    <div class="district-num">7구역</div>
+                    <div class="district-name">키르나</div>
+                    <div class="district-desc">금지구역 인접 구역. 탐사 허가 발급 기관이 위치. 여행자 주의 구역.</div>
+                </div>
+            </div>
 
             <h2>블랑콥 축제</h2>
-            <p>겨울이 들어서기 전에 열리는 거대한 축제. 모든 사람들이 먹고 놀고 즐기는 시간으로, 테스모스의 풍요로운 농업 문화를 상징한다.</p>
+            <p>겨울이 들어서기 전에 열리는 거대한 축제. 모든 사람들이 먹고 놀고 즐기는 시간으로, 테스모스의 풍요로운 농업 문화를 상징한다. 축제 기간에는 공식적으로 결투가 금지되며, 이 기간만큼은 약자도 안전하게 거리를 걸을 수 있다.</p>
+            <p>블랑콥 기간 동안 열리는 <strong>무력 경연(포르체 마지나)</strong>은 테스모스 최대의 스포츠 이벤트다. 대륙 각지의 강자들이 참여하며, 우승자에게는 수장의 공식 인정이 주어진다.</p>
 
-            <div class="highlight">화폐 <strong>아온</strong> — 테스모스에서 사용하는 지폐.</div>
+            <h2>전략적 중요성</h2>
+            <p>금지구역으로 가기 위한 유일한 육지 경로가 테스모스 7구역 키르나를 지나간다. 이 때문에 테스모스는 대륙 여러 세력의 주의를 끌고 있으며, 많은 나라가 테스모스와의 외교 관계를 신중하게 관리한다. 테스모스는 이 전략적 위치를 활용하여 금지구역 탐사 허가를 유료로 발급하고 있다.</p>
+
+            <h2>이계와의 갈등</h2>
+            <p>테스모스는 이계의 영향을 받지만, 건국자 디케 샤이노슐저가 이계를 혐오하는 인물이기 때문에 이계인들을 공식적으로 탄압하는 이중적 상황이 존재한다. 6구역처럼 이계인이 몰려 사는 지역이 생겨났지만, 디케의 명에 따라 언제든 박해가 시작될 수 있다. 이계인들은 이 상황에 반발하여 조직적으로 저항하고 있다.</p>
+
+            <h2>국가 간 관계</h2>
+            <div class="rel-row"><span class="rel-nation">로이람</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">불가침 협약 유지. 금지구역 접근로 문제로 은밀한 긴장 관계.</span></div>
+            <div class="rel-row"><span class="rel-nation">글리세 학회</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">금지구역 탐사 허가를 두고 협상 중. 학회의 자금력과 테스모스의 경로를 맞교환하는 구도.</span></div>
+            <div class="rel-row"><span class="rel-nation">그레이다</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">이계 문제로 접촉. 디케가 이계 혐오자임에도 불구하고 관계 단절은 없음.</span></div>
+            <div class="rel-row"><span class="rel-nation">아크뉴엘</span><span class="rel-status rel-bad">경계</span><span class="rel-desc">이계 대응 측면에서 표면상 공통점이 있지만, 서로의 방식에 불신이 강함.</span></div>
+
+            <h2>기어 노마드와의 관계</h2>
+            <p>테스모스는 기어 노마드들의 주요 경유지다. 금지구역으로 향하는 모든 노마드는 7구역 키르나에서 탐사 허가를 발급받아야 하며, 허가 없이 진입 시 테스모스 무력 집단의 제지를 받는다. 테스모스 내에서 활동하는 노마드들은 강자를 존중하는 문화 때문에 실력을 증명하는 것이 중요하다.</p>
+
         </article>
     </div>
 
     <footer>
         <p class="footer-logo">BENETISIA</p>
-        <p class="footer-sub">Official Archive — World &amp; Character Reference</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
     </footer>
 </body>
 </html>

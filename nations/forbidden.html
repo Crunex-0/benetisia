@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,20 @@
     <title>금지구역 — BENETISIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .policy-list { list-style: none; margin: 1rem 0; }
+        .policy-item { display: flex; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-dim); align-items: flex-start; }
+        .policy-nation { font-family: var(--f-title); font-size: 0.72rem; color: var(--gold); min-width: 100px; letter-spacing: 0.04em; flex-shrink: 0; }
+        .policy-desc { font-size: 0.86rem; color: var(--text-dim); line-height: 1.65; }
+        .incident-block { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid #8a1a1a; padding: 0.9rem 1.2rem; margin-bottom: 0.7rem; }
+        .incident-title { font-family: var(--f-title); font-size: 0.72rem; color: #8a1a1a; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+        .incident-body { font-size: 0.86rem; color: var(--text-dim); line-height: 1.65; }
+        .zone-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 1rem 0; }
+        .zone-block { background: var(--bg2); border: 1px solid var(--border); border-top: 2px solid var(--c, var(--gold)); padding: 0.75rem 0.9rem; }
+        .zone-tag { font-family: var(--f-title); font-size: 0.68rem; color: var(--c, var(--gold)); letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+        .zone-body { font-size: 0.82rem; color: var(--text-dim); line-height: 1.6; }
+        @media (max-width: 640px) { .zone-legend { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -34,10 +48,10 @@
         </nav>
     </header>
 
-    <div class="wiki-hero" style="--c-bg: rgba(138,26,90,0.25)">
+    <div class="wiki-hero" style="background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(120,20,80,0.30) 0%, transparent 70%), var(--black);">
         <p class="wiki-breadcrumb"><a href="../nations.html">국가</a> / 금지구역</p>
         <h1>금지구역</h1>
-        <p class="tagline">봉인된 옛 베네티시아의 땅</p>
+        <p class="tagline">봉인된 옛 베네티시아의 땅 — 세상의 비밀과 죽음이 잠든 곳</p>
     </div>
 
     <div class="wiki-body">
@@ -45,32 +59,86 @@
             <div class="info-box">
                 <h3>기본 정보</h3>
                 <table>
-                    <tr><th>상태</th><td>결계로 봉인</td></tr>
-                    <tr><th>원래 정체</th><td>옛 베네티시아</td></tr>
-                    <tr><th>마력 상태</th><td>불안정</td></tr>
-                    <tr><th>접근 경로</th><td>테스모스 경유</td></tr>
+                    <tr><th>상태</th><td>이중 결계로 봉인</td></tr>
+                    <tr><th>원래 정체</th><td>옛 베네티시아 심부</td></tr>
+                    <tr><th>마력 상태</th><td>극히 불안정</td></tr>
+                    <tr><th>접근 경로</th><td>테스모스 키르나 구역 경유</td></tr>
                     <tr><th>탐사 현황</th><td>밝혀진 것 거의 없음</td></tr>
+                    <tr><th>관리 주체</th><td>복수 국가 공동 봉인 유지</td></tr>
+                    <tr><th>위험도</th><td>★★★★★ (최고 위험)</td></tr>
                 </table>
             </div>
         </aside>
 
         <article class="wiki-content">
+
             <h2>개요</h2>
-            <p>대륙의 마력이 불안정하여 중앙 관리부에서 대륙 전체에 결계를 쳐둔 지역. 옛 베네티시아의 장소이지만, 탐사가 어려워 밝혀진 것이 거의 없다.</p>
+            <p>대륙의 마력이 불안정하여 중앙 관리부에서 대륙 전체에 결계를 쳐둔 지역. 옛 베네티시아의 심부였던 곳으로, 1차 혼란기의 종결과 함께 봉인이 이루어졌다. 탐사가 극히 어려워 밝혀진 것이 거의 없으며, 대륙 어느 국가도 이 지역을 공식적으로 통치하고 있지 않다.</p>
+            <p>베네티시아의 멸망과 세상의 비밀이 잠들어 있을 가능성이 높은 장소. 기어 노마드 프로젝트의 궁극적인 목적지 중 하나로 여겨진다. 과거에 탐사를 시도한 많은 자들이 돌아오지 못했다.</p>
+            <div class="highlight">결계가 이중으로 쳐져 있어 탐사가 극히 어려우며, 현재까지 내부의 실체는 밝혀지지 않았다. 결계 자체도 시간이 지나면서 조금씩 약화되고 있다는 경고가 있다.</div>
 
-            <h2>접근 방법</h2>
-            <p>금지구역으로 가기 위한 유일한 육지 경로는 테스모스를 지나가야 한다. 이 때문에 테스모스는 더욱 많은 세력들의 감시를 받고 있다.</p>
+            <h2>결계의 구조</h2>
+            <p>금지구역을 봉인하는 결계는 단일 마법이 아닌 복수의 국가와 세력이 협력하여 유지하는 <strong>이중 결계</strong>다. 바깥층은 외부인의 접근을 막는 방어 결계이며, 안층은 내부에서 무언가가 나오지 못하도록 막는 봉인 결계다. 이 두 결계의 성격이 다르기 때문에 관리 주체도 다르다고 알려져 있다.</p>
+            <p>결계는 일부 특수한 허가증이나 능력을 통해 외부 방어층만 통과할 수 있다. 테스모스가 발급하는 탐사 허가증이 이에 해당하지만, 허가증이 있어도 진입 후의 안전은 보장받지 못한다.</p>
 
-            <h2>의의</h2>
-            <p>베네티시아의 멸망과 세상의 비밀이 잠들어 있을 가능성이 높은 장소. 기어 노마드 프로젝트의 궁극적인 목적지 중 하나로 여겨진다.</p>
+            <h2>내부 구역 (추정)</h2>
+            <div class="zone-legend">
+                <div class="zone-block" style="--c:#6a1a4a">
+                    <div class="zone-tag">외곽부 (진입 가능)</div>
+                    <div class="zone-body">탐사 허가증으로 접근 가능한 구역. 폐허가 된 구 베네티시아 주거지 유적이 있다. 이계 에너지가 강하고 지형이 불안정하다.</div>
+                </div>
+                <div class="zone-block" style="--c:#4a1a6a">
+                    <div class="zone-tag">중간부 (탐사 불명)</div>
+                    <div class="zone-body">탐사대 대부분이 접근하지 못한 구역. 이계 생물들이 서식하는 것으로 추정. 살아 돌아온 탐사자가 거의 없다.</div>
+                </div>
+                <div class="zone-block" style="--c:#1a1a6a">
+                    <div class="zone-tag">핵심부 (봉인)</div>
+                    <div class="zone-body">안층 결계 내부. 베네티시아 멸망의 원인이 있다고 추정. 접근한 자의 기록이 전혀 없다.</div>
+                </div>
+                <div class="zone-block" style="--c:#3a1a1a">
+                    <div class="zone-tag">균열 지점</div>
+                    <div class="zone-body">결계가 불완전한 지점들. 이계 생물이 이 지점을 통해 대륙으로 유출되는 경우가 있다. 기어 노마드들의 주요 활동 구역.</div>
+                </div>
+            </div>
 
-            <div class="highlight">결계가 쳐져 있어 탐사가 극히 어려우며, 현재까지 내부의 실체는 밝혀지지 않았다.</div>
+            <h2>역사적 사건</h2>
+            <div class="incident-block">
+                <div class="incident-title">1차 봉인 작전 (혼란기 종결 시점)</div>
+                <div class="incident-body">혼란기를 종결시킨 다국가 연합의 최후 작전. 살아남은 마법사들과 각국 군사 세력이 연합하여 금지구역에 이중 결계를 설치했다. 이 과정에서 수많은 마법사가 희생된 것으로 전해지지만 정확한 수는 알려지지 않았다.</div>
+            </div>
+            <div class="incident-block">
+                <div class="incident-title">글리세 학회 1차 탐사 (약 40년 전)</div>
+                <div class="incident-body">루네스 이전 시대의 시그마인 주도로 이루어진 탐사. 12인 탐사단 중 3인만 귀환. 귀환자들은 정신적 충격으로 오랫동안 진술을 거부했으며, 이후 탐사 공식 중단.</div>
+            </div>
+            <div class="incident-block">
+                <div class="incident-title">균열 확대 사건 (약 10년 전)</div>
+                <div class="incident-body">결계의 특정 지점이 갑작스럽게 확대되어 이계 생물들이 대거 유출. 인접 테스모스 7구역(키르나)에 피해가 발생했으며, 여러 세력이 합동으로 진압. 이 사건 이후 결계가 약화되고 있다는 우려가 공식화됨.</div>
+            </div>
+            <div class="incident-block">
+                <div class="incident-title">기어 노마드 선행 탐사 (최근)</div>
+                <div class="incident-body">글리세 학회 후원 아래 소규모 노마드 팀이 금지구역 외곽부를 탐사. 일부 유물과 베네티시아 문서 단편을 회수했으나 완전한 해독은 이루어지지 않은 상태.</div>
+            </div>
+
+            <h2>각국 정책</h2>
+            <ul class="policy-list">
+                <li class="policy-item"><span class="policy-nation">테스모스</span><span class="policy-desc">경계 관리 및 탐사 허가 발급. 키르나 구역에 검문소를 두고 있으며, 허가 없는 접근자를 무력 제지한다.</span></li>
+                <li class="policy-item"><span class="policy-nation">글리세 학회</span><span class="policy-desc">공식 탐사 중단 상태이나 기어 노마드를 통한 간접 탐사는 계속하고 있다. 수집된 자료 분석에 집중.</span></li>
+                <li class="policy-item"><span class="policy-nation">로이람</span><span class="policy-desc">군사적 봉쇄를 지지하며, 결계 약화에 대비한 방어 체계 구축 중. 슈아비스 분대가 주기적으로 순찰.</span></li>
+                <li class="policy-item"><span class="policy-nation">그레이다</span><span class="policy-desc">이계 에너지 연구 목적으로 관심을 가지고 있으나 공식 탐사는 없다.</span></li>
+                <li class="policy-item"><span class="policy-nation">아크뉴엘</span><span class="policy-desc">세리로프를 통해 내부 정보를 수집하고 있다고 추정. 공식 입장 없음.</span></li>
+                <li class="policy-item"><span class="policy-nation">반-로므</span><span class="policy-desc">관여 거부. 이계 에너지가 가득한 곳이라는 이유로 이 지역에 대한 일체의 관여를 거부한다.</span></li>
+            </ul>
+
+            <h2>기어 노마드와의 관계</h2>
+            <p>금지구역은 기어 노마드 프로젝트의 핵심 목적지다. 글리세 학회가 공식 탐사를 중단한 이후 노마드들이 사실상의 탐사 인력 역할을 맡고 있다. 테스모스 탐사 허가증을 발급받고 외곽부에 진입하는 의뢰들이 주기적으로 등록된다. 보상은 최고 등급이지만, 귀환 확률 보장은 없다.</p>
+            <p>금지구역에서 발견된 베네티시아 유물은 글리세 학회에 보고하는 것이 의무이지만, 암시장에서 유통되는 경우도 있다. 테스모스와 글리세 학회 모두 이 암시장을 단속하려 하고 있다.</p>
+
         </article>
     </div>
 
     <footer>
         <p class="footer-logo">BENETISIA</p>
-        <p class="footer-sub">Official Archive — World &amp; Character Reference</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
     </footer>
 </body>
 </html>

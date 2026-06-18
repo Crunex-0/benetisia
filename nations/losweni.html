@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,21 @@
     <title>로스웨니 — BENETISIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .rel-row { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border-dim); font-size: 0.88rem; }
+        .rel-row:last-child { border-bottom: none; }
+        .rel-nation { min-width: 90px; font-weight: 600; color: var(--text); font-size: 0.84rem; }
+        .rel-status { font-size: 0.68rem; padding: 0.1rem 0.4rem; border: 1px solid; white-space: nowrap; margin-right: 0.4rem; font-family: var(--f-title); letter-spacing: 0.04em; flex-shrink: 0; }
+        .rel-good { color: #1a7a3a; border-color: #a0d8b0; background: #e8f8ee; }
+        .rel-neutral { color: #7a6a1a; border-color: #d8c870; background: #f8f4e0; }
+        .rel-bad { color: #8a1a1a; border-color: #d8a0a0; background: #f8e8e8; }
+        .rel-desc { color: var(--text-dim); font-size: 0.84rem; flex: 1; }
+        .season-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1rem 0; }
+        .season-card { background: var(--bg2); border: 1px solid var(--border); border-top: 2px solid var(--c, var(--gold)); padding: 0.85rem 1rem; }
+        .season-name { font-family: var(--f-title); font-size: 0.7rem; color: var(--c, var(--gold)); letter-spacing: 0.07em; margin-bottom: 0.25rem; }
+        .season-desc { font-size: 0.82rem; color: var(--text-dim); line-height: 1.65; }
+        @media (max-width: 640px) { .season-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -34,10 +49,10 @@
         </nav>
     </header>
 
-    <div class="wiki-hero" style="--c-bg: rgba(58,170,42,0.15)">
+    <div class="wiki-hero" style="background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(58,170,42,0.18) 0%, transparent 70%), var(--black);">
         <p class="wiki-breadcrumb"><a href="../nations.html">국가</a> / 로스웨니</p>
         <h1>로스웨니</h1>
-        <p class="tagline">중립을 지키는 울창한 숲의 나라</p>
+        <p class="tagline">중립을 지키는 울창한 숲의 나라 — 자연과 영물이 공존하는 땅</p>
     </div>
 
     <div class="wiki-body">
@@ -45,26 +60,78 @@
             <div class="info-box">
                 <h3>기본 정보</h3>
                 <table>
-                    <tr><th>외교</th><td>중립국</td></tr>
+                    <tr><th>위치</th><td>북동쪽 고산·삼림 지대</td></tr>
+                    <tr><th>수도</th><td>소로이 (숲 중앙 마을)</td></tr>
+                    <tr><th>화폐</th><td>로렐 (공용) / 물물교환</td></tr>
+                    <tr><th>외교</th><td>완전 중립</td></tr>
                     <tr><th>지형</th><td>고산지대, 울창한 숲</td></tr>
-                    <tr><th>인구</th><td>분산 거주</td></tr>
-                    <tr><th>신앙</th><td>자연의 힘</td></tr>
+                    <tr><th>인구</th><td>분산 거주 (마을 단위)</td></tr>
+                    <tr><th>신앙</th><td>자연 정령 신앙</td></tr>
+                    <tr><th>특산</th><td>약초·정령 결정·희귀 목재</td></tr>
+                    <tr><th>위험도</th><td>★★☆☆☆ (영물 주의)</td></tr>
                 </table>
             </div>
         </aside>
 
         <article class="wiki-content">
-            <h2>개요</h2>
-            <p>중립국을 표방하고 있으며, 특이하게도 지형 덕에 혼란기에 직접적인 피해가 적은 지역 중 하나다. 고산지대가 많고, 인구 분포가 밀집되지 않아 전란의 피해를 비교적 적게 받는다.</p>
 
-            <h2>자연과 신앙</h2>
-            <p>자연의 힘을 믿지만, 개발은 하지 않은 탓에 울창한 숲과 여러 신기한 생물체들이 살고 있다. 개발되지 않은 자연 그대로의 모습을 간직한 몇 안 되는 지역이다.</p>
+            <h2>개요</h2>
+            <p>중립국을 표방하고 있으며, 특이하게도 지형 덕에 혼란기에 직접적인 피해가 적은 지역 중 하나다. 고산지대가 많고, 인구 분포가 밀집되지 않아 전란의 피해를 비교적 적게 받는다. 자연의 힘을 믿지만 개발은 하지 않은 탓에 울창한 숲과 여러 신기한 생물체들이 살고 있다.</p>
+            <p>로스웨니는 어떤 국가와도 공식적인 동맹을 맺지 않는다. 이 원칙은 수백 년에 걸쳐 이어져 온 것으로, 로스웨니 내부 분쟁에 다른 나라가 개입하는 것도 금지되어 있다.</p>
+            <div class="highlight">"숲은 강자의 편도 약자의 편도 아니다. 숲은 그저 자란다." — 로스웨니 격언</div>
+
+            <h2>수도 소로이</h2>
+            <p>로스웨니의 수도 <strong>소로이(Soroi)</strong>는 도시보다는 마을에 가깝다. 숲 한가운데에 위치하며, 수백 년 된 거대한 나무들이 도시의 뼈대 역할을 한다. 건물들은 나무 위나 나무 사이에 지어지며, 땅을 훼손하지 않는 방식으로 설계되어 있다. 소로이를 찾아오는 외부인은 길잡이 없이는 접근하기 어렵다.</p>
+            <p>소로이 중심에는 로스웨니 신앙의 핵심인 <strong>뿌리 신목(Rootwood)</strong>이 있다. 로스웨니 주민들은 이 나무가 자연 정령들의 집합처이자 세계의 뿌리가 닿는 곳이라 믿는다. 신목에 가까이 다가가는 것은 로스웨니 영적 지도자의 허가를 받아야만 가능하다.</p>
+
+            <h2>자연 정령 신앙</h2>
+            <p>로스웨니의 신앙 체계는 체계화된 종교라기보다는 자연과의 약속에 가깝다. 숲, 강, 산, 바람 어디에나 정령이 깃들어 있다고 믿으며, 이 정령들과의 관계를 유지하는 것이 공동체의 의무다. 영적 지도자 <strong>풀레이</strong>는 이 정령들의 말을 듣고 해석하여 공동체에 전달하는 역할을 한다.</p>
+            <p>로스웨니에서 영물(영물 종족)은 단순한 희귀 생물이 아니라 자연 정령이 깃든 신성한 존재로 취급된다. 영물을 해치거나 포획하는 것은 로스웨니에서 가장 엄중한 범죄 중 하나다. 이 때문에 다른 나라의 영물 사냥꾼들이 로스웨니에 들어왔다가 추방되는 사건이 종종 발생한다.</p>
+
+            <h2>계절 축제</h2>
+            <div class="season-grid">
+                <div class="season-card" style="--c:#c8a84c">
+                    <div class="season-name">봄 — 싹틈의 날</div>
+                    <div class="season-desc">새 생명이 돋아나는 것을 기념하는 축제. 씨앗을 심고 숲에 대한 감사를 전하는 의식이 행해진다. 이 시기에는 외부인의 입국도 허용한다.</div>
+                </div>
+                <div class="season-card" style="--c:#3a9a3a">
+                    <div class="season-name">여름 — 정령의 밤</div>
+                    <div class="season-desc">하지에 열리는 밤 축제. 영물과 정령을 불러들이는 의식이 행해지며, 이 날 밤 숲에서 보이는 빛의 정령들은 연중 가장 활발하다.</div>
+                </div>
+                <div class="season-card" style="--c:#c85030">
+                    <div class="season-name">가을 — 수확의 침묵</div>
+                    <div class="season-desc">말없이 숲에서 수확물을 거두는 날. 불필요한 소리를 최소화하며 자연에 경의를 표한다. 이 기간에는 외부인 입국이 금지된다.</div>
+                </div>
+                <div class="season-card" style="--c:#3a6aaa">
+                    <div class="season-name">겨울 — 뿌리의 기억</div>
+                    <div class="season-desc">신목 앞에 모여 조상과 정령들을 기리는 의식. 연장자들이 과거의 이야기를 전달하는 날이며, 로스웨니의 구전 역사가 전승된다.</div>
+                </div>
+            </div>
+
+            <h2>마을 구조</h2>
+            <p>로스웨니는 수도 소로이를 중심으로 다수의 소규모 마을들이 분산되어 있다. 각 마을은 씨족 혹은 직업 공동체 단위로 구성되며, 마을 간의 이동은 숲길을 통해 이루어진다. 길잡이 역할을 하는 숲 안내자 직책이 있으며, 이 직책은 세습된다.</p>
+            <p>마을 외곽에는 영물 서식지가 있으며, 인간이 침범하지 않도록 자연 경계를 표시하는 표지가 세워져 있다. 이 경계를 허가 없이 넘으면 영물의 공격 대상이 된다고 알려져 있다.</p>
+
+            <h2>특산물</h2>
+            <p>로스웨니의 특산품은 숲에서 채취한 희귀 약초와 영물 서식지 근처에서 자연적으로 생성되는 <strong>정령 결정</strong>이다. 정령 결정은 정령 에너지가 응집된 보석으로, 치유 마법의 재료로 높은 가치를 지닌다. 수백 년 이상된 거목에서 얻는 희귀 목재도 대륙 시장에서 고가로 거래된다.</p>
+            <p>이 특산물들은 외부인이 직접 채취하는 것이 금지되어 있으며, 로스웨니 공동체가 공식적으로 거래하는 방식으로만 수출된다. 이 때문에 밀렵꾼이나 밀채취자와의 분쟁이 끊이지 않는다.</p>
+
+            <h2>국가 간 관계</h2>
+            <div class="rel-row"><span class="rel-nation">로이람</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">물자 거래 측면에서 조용한 교류. 로스웨니 약초는 로이람 군의 의료 물자로 쓰인다.</span></div>
+            <div class="rel-row"><span class="rel-nation">카르다</span><span class="rel-status rel-good">우호</span><span class="rel-desc">자연 신앙과 영물 존중이라는 공통점. 정령 결정 거래 파트너.</span></div>
+            <div class="rel-row"><span class="rel-nation">그레이다</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">약초와 마법 재료 거래. 그레이다 마녀들이 로스웨니를 방문하는 경우가 있다.</span></div>
+            <div class="rel-row"><span class="rel-nation">반-로므</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">개발 금지 정책으로 반-로므의 광물 채굴 요청을 거절한 전례가 있다.</span></div>
+            <div class="rel-row"><span class="rel-nation">글리세 학회</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">영물과 정령 결정에 대한 학술 접근 요청을 일부 허용하고 있다.</span></div>
+
+            <h2>기어 노마드와의 관계</h2>
+            <p>로스웨니는 기어 노마드들에게 특별한 규칙을 요구한다. 영물을 공격하거나 숲에서 무단 채취를 하면 즉시 추방이며, 이후 입국 금지가 된다. 그러나 이 규칙을 지키는 노마드들은 환영받으며, 영물 관련 사건이나 자연 재해에 관한 의뢰를 받을 수 있다. 로스웨니에서의 노마드 의뢰는 특이하고 신비로운 경우가 많다는 평이 있다.</p>
+
         </article>
     </div>
 
     <footer>
         <p class="footer-logo">BENETISIA</p>
-        <p class="footer-sub">Official Archive — World &amp; Character Reference</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
     </footer>
 </body>
 </html>

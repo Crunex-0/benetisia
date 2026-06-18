@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,20 @@
     <title>반-로므 — BENETISIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .rel-row { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border-dim); font-size: 0.88rem; }
+        .rel-row:last-child { border-bottom: none; }
+        .rel-nation { min-width: 90px; font-weight: 600; color: var(--text); font-size: 0.84rem; }
+        .rel-status { font-size: 0.68rem; padding: 0.1rem 0.4rem; border: 1px solid; white-space: nowrap; margin-right: 0.4rem; font-family: var(--f-title); letter-spacing: 0.04em; flex-shrink: 0; }
+        .rel-good { color: #1a7a3a; border-color: #a0d8b0; background: #e8f8ee; }
+        .rel-neutral { color: #7a6a1a; border-color: #d8c870; background: #f8f4e0; }
+        .rel-bad { color: #8a1a1a; border-color: #d8a0a0; background: #f8e8e8; }
+        .rel-desc { color: var(--text-dim); font-size: 0.84rem; flex: 1; }
+        .tech-list { list-style: none; margin: 1rem 0; }
+        .tech-item { display: flex; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-dim); }
+        .tech-name { font-family: var(--f-title); font-size: 0.75rem; color: var(--gold); min-width: 110px; }
+        .tech-desc { font-size: 0.86rem; color: var(--text-dim); line-height: 1.65; }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -34,10 +48,10 @@
         </nav>
     </header>
 
-    <div class="wiki-hero" style="--c-bg: rgba(192,57,43,0.2)">
+    <div class="wiki-hero" style="background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(192,57,43,0.18) 0%, transparent 70%), var(--black);">
         <p class="wiki-breadcrumb"><a href="../nations.html">국가</a> / 반-로므</p>
         <h1>반-로므</h1>
-        <p class="tagline">기계 산업의 나라, 마법을 혐오하는 자들</p>
+        <p class="tagline">강철과 기어로 세워진 나라 — 마법 없이 세계 최고를 꿈꾸는 기계 강국</p>
     </div>
 
     <div class="wiki-body">
@@ -45,30 +59,66 @@
             <div class="info-box">
                 <h3>기본 정보</h3>
                 <table>
-                    <tr><th>위치</th><td>3면이 바다</td></tr>
-                    <tr><th>특징</th><td>기계 산업, 항해술</td></tr>
-                    <tr><th>마법 성향</th><td>혐오</td></tr>
+                    <tr><th>위치</th><td>3면이 바다 (튜소니아 해역)</td></tr>
+                    <tr><th>수도</th><td>포르타닐</td></tr>
+                    <tr><th>화폐</th><td>크로나 (금속 주화)</td></tr>
+                    <tr><th>정치 체제</th><td>기술원 평의회</td></tr>
+                    <tr><th>마법 성향</th><td>혐오·완전 금지</td></tr>
                     <tr><th>외교</th><td>선택적 쇄국</td></tr>
+                    <tr><th>주요 산업</th><td>기계·조선·금속 가공</td></tr>
                     <tr><th>대표</th><td>이니스 아트리스</td></tr>
+                    <tr><th>위험도</th><td>★★☆☆☆ (안정, 마법사 제외)</td></tr>
                 </table>
             </div>
         </aside>
 
         <article class="wiki-content">
+
             <h2>개요</h2>
-            <p>기계 산업이 발달한 국가. 마법을 혐오한다. 튜소니아와 같이 3면이 바다인 지형 탓에 항해술이 발달하였으며, 내장되어 있는 풍부한 자원을 통해 기술을 개발했다.</p>
+            <p>기계 산업이 발달한 국가. 마법을 혐오하며 선택적 쇄국을 채택하고 있다. 3면이 바다인 <strong>튜소니아 해역</strong>에 둘러싸인 지형 탓에 항해술이 발달하였으며, 내장된 풍부한 광물 자원을 통해 독자적인 기술을 개발했다.</p>
+            <p>마법 없이 순수 기술력만으로 대륙에서 가장 발달한 기계 문명을 이루었다는 것이 반-로므 국민들의 자부심이다. 혼란기 당시 마법 부대들이 이계에 무력하게 쓰러지는 것을 목격한 반-로므는 "마법은 결국 이계에 의해 뒤집힌다"는 교훈을 국가 이념으로 삼았다.</p>
+            <div class="highlight">화폐 <strong>크로나(Krona)</strong> — 반-로므산 특수 합금으로 만든 금속 주화. 위조가 거의 불가능하다는 점에서 신뢰도가 높아, 대륙 일부 지역에서 로렐과 함께 기축 통화로 취급된다.</div>
 
-            <h2>외교 정책</h2>
-            <p>선택적 쇄국을 채택하고 있다. 마법 국가인 그레이다, 카르다와는 무역 금지를 선언하며 적대 관계를 유지하고 있다.</p>
+            <h2>수도 포르타닐</h2>
+            <p>반-로므의 수도 <strong>포르타닐(Portanil)</strong>은 거대한 항구 도시다. 도시 중심에는 증기 동력의 거대한 기계 탑이 솟아 있으며, 이 탑은 반-로므 기술력의 상징이자 도시 전체에 에너지를 공급하는 핵심 시설이다. 도시는 항구 구역, 공장 구역, 거주 구역, 기술원 구역으로 나뉜다.</p>
+            <p>포르타닐의 거리에는 증기 트램이 달리고, 하늘에는 기어 기반의 비행선이 떠다닌다. 마법 조명 대신 가스 조명을 사용하며, 외국에서 온 방문자들은 이 기술 집약적인 도시의 모습에 감탄하거나 압도되곤 한다.</p>
 
-            <h2>지도자</h2>
-            <p>이니스 아트리스라는 자가 대표로 운영하고 있다.</p>
+            <h2>마법 혐오와 금지</h2>
+            <p>반-로므에서 마법 사용은 불법이다. 마력을 가진 채로 입국하는 것은 사전 신고 후 억압 장치(기어 제약 팔찌)를 착용해야만 허용된다. 마법을 공개적으로 시전하면 즉시 추방 또는 구금 처리되며, 재범 시에는 국적 박탈까지 가능하다.</p>
+            <p>이 정책 때문에 마법을 가진 종족 — 이계인, 영물, 일부 인간 등 — 은 반-로므에서 사실상 2등 시민 취급을 받는다. 이들은 능력을 숨기고 살거나, 반-로므를 떠난다. 이니스 아트리스는 이 정책의 완화를 고려한다는 소문이 있지만 공식 입장은 변화 없음이다.</p>
+
+            <h2>기계 기술 목록</h2>
+            <ul class="tech-list">
+                <li class="tech-item"><span class="tech-name">증기 기관</span><span class="tech-desc">반-로므의 핵심 동력 기술. 공장, 교통, 발전 모두 증기 기관이 기반이다.</span></li>
+                <li class="tech-item"><span class="tech-name">기어 엔진</span><span class="tech-desc">마력 없이 기어만으로 구동되는 정밀 엔진. 반-로므 독자 개발 기술.</span></li>
+                <li class="tech-item"><span class="tech-name">기계 인형 (오토마타)</span><span class="tech-desc">인간 형태의 자율 기계. 단순 작업 보조용이며, 글리세 학회의 마법 인형과는 작동 원리가 다르다.</span></li>
+                <li class="tech-item"><span class="tech-name">합금 제련</span><span class="tech-desc">튜소니아 해역 특유의 광물을 이용한 특수 합금. 내구성과 경량화를 동시에 달성.</span></li>
+                <li class="tech-item"><span class="tech-name">비행선 (에어쉽)</span><span class="tech-desc">증기와 기어 엔진으로 부양하는 대형 비행 선박. 대륙 간 이동 수단으로 실용화됨.</span></li>
+            </ul>
+
+            <h2>이니스 아트리스</h2>
+            <p>반-로므의 현 대표이자 기술원 평의회 의장. 냉철하고 실용적인 인물로, 감정보다 데이터를 중시하는 것으로 알려져 있다. 마법 혐오 정책의 강경 유지파이지만, 외교적으로는 유연한 태도를 보인다. 이니스 본인이 마법 억압 장치를 연구하는 데 관여했다는 소문이 있으나 확인되지 않았다.</p>
+            <p>이니스는 반-로므의 기술 수출을 통해 경제적 영향력을 키우는 전략을 취하고 있다. 특히 비행선과 합금 수출에 적극적이며, 반-로므 기술에 의존하는 국가들을 통해 간접적인 정치 영향력을 행사하고 있다.</p>
+
+            <h2>사회 계층</h2>
+            <p>반-로므에서는 기술력이 곧 계층이다. 최상위는 기술원(技術員, Technar) — 원로 엔지니어들로 구성된 통치 기관 구성원들이다. 그 아래로 숙련 기술자, 일반 시민, 비기술 노동자 순이다. 마법 능력자는 마법을 사용하지 않는다면 일반 시민 대우를 받을 수 있지만, 사회적 눈길이 따갑다.</p>
+
+            <h2>국가 간 관계</h2>
+            <div class="rel-row"><span class="rel-nation">로이람</span><span class="rel-status rel-good">우호</span><span class="rel-desc">마법 배척 공통점. 무기·기술 협력 협정. 대륙 내 가장 강력한 우방.</span></div>
+            <div class="rel-row"><span class="rel-nation">글리세 학회</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">기술 vs 마법 접근법 차이로 갈등. 그러나 기어 연구 공통점으로 교류 유지.</span></div>
+            <div class="rel-row"><span class="rel-nation">그레이다</span><span class="rel-status rel-bad">적대</span><span class="rel-desc">무역 금지. 마법 국가임을 이유로 상호 입국 금지 상태.</span></div>
+            <div class="rel-row"><span class="rel-nation">카르다</span><span class="rel-status rel-bad">적대</span><span class="rel-desc">마법 국가 분류로 인해 무역 금지. 카르다의 이계 연결도 적대 요인.</span></div>
+            <div class="rel-row"><span class="rel-nation">테스모스</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">무기 거래로 경제적 연결이 있지만 정치적 신뢰는 낮음.</span></div>
+
+            <h2>기어 노마드와의 관계</h2>
+            <p>반-로므는 기어 노마드 체계에 조건부로 협조한다. 마법 능력 없이 순수 기술과 전투력으로 활동하는 노마드는 환영하지만, 마법 사용 노마드는 포르타닐 입항 시 억압 장치 착용이 의무화된다. 반-로므에서 기어 노마드에 주어지는 의뢰는 주로 기계 고장 수리, 오토마타 오작동 사건, 밀수 적발 등의 기술적인 내용이 많다.</p>
+
         </article>
     </div>
 
     <footer>
         <p class="footer-logo">BENETISIA</p>
-        <p class="footer-sub">Official Archive — World &amp; Character Reference</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
     </footer>
 </body>
 </html>

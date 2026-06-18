@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,22 @@
     <title>인물 — BENETISIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .char-grid { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 6rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.4rem; }
+        .char-card { background: var(--bg2); border: 1px solid var(--border); display: flex; flex-direction: column; }
+        .char-banner { height: 5px; background: var(--accent, var(--gold)); }
+        .char-body { padding: 1.4rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+        .char-name { font-family: var(--f-title); font-size: 1.05rem; color: var(--text); letter-spacing: 0.04em; }
+        .char-title { font-size: 0.75rem; color: var(--accent, var(--gold)); font-family: var(--f-title); letter-spacing: 0.06em; text-transform: uppercase; }
+        .char-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+        .char-tag { font-size: 0.68rem; padding: 0.1rem 0.5rem; border: 1px solid var(--border); color: var(--text-dim); font-family: var(--f-title); letter-spacing: 0.04em; }
+        .char-desc { font-size: 0.86rem; color: var(--text-dim); line-height: 1.75; flex: 1; }
+        .char-meta { display: flex; flex-wrap: wrap; gap: 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--border-dim); }
+        .char-meta-item { font-size: 0.78rem; color: var(--text-dim); }
+        .char-meta-item strong { color: var(--text); font-weight: 500; }
+        .section-label { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        .section-label h2 { font-family: var(--f-title); font-size: 0.72rem; color: var(--gold); letter-spacing: 0.12em; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0; }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -36,19 +52,120 @@
 
     <div class="page-hero">
         <h1>인물</h1>
-        <p>베네티시아 세계관의 주요 등장인물</p>
+        <p>베네티시아 세계관의 주요 등장인물 — NPC 프로필</p>
     </div>
 
-    <div style="max-width:1100px; margin:0 auto; padding: 2rem 2rem 5rem; text-align:center;">
-        <div style="background:var(--bg2); border:1px solid var(--border); padding:3rem 2rem; color:var(--text-dim);">
-            <p style="font-family:var(--f-title); font-size:0.85rem; letter-spacing:0.1em; color:var(--gold); margin-bottom:1rem;">준비 중</p>
-            <p style="font-size:0.95rem; line-height:1.8;">인물 프로필 페이지가 곧 추가될 예정입니다.<br>캐릭터 설정이 완성되는 대로 업로드됩니다.</p>
+    <div class="section-label" style="padding-top:2rem;">
+        <h2>주요 NPC</h2>
+    </div>
+
+    <div class="char-grid">
+
+        <!-- 루쟈냐 마르렌 -->
+        <div class="char-card">
+            <div class="char-banner" style="--accent:#c8a84c;"></div>
+            <div class="char-body">
+                <div class="char-title">로이람 여왕</div>
+                <div class="char-name">루쟈냐 마르렌</div>
+                <div class="char-tags">
+                    <span class="char-tag">인간</span>
+                    <span class="char-tag">로이람</span>
+                    <span class="char-tag">슈아비스</span>
+                </div>
+                <div class="char-desc">중앙제국 로이람의 현 여왕이자 슈아비스의 최고 사령관. 혼란기 이후 폐허에서 로이람을 재건한 인물로, "평등의 여왕"이라는 이명을 갖고 있다. 마법 배척 기조가 뿌리 깊은 로이람에서 점진적인 개방을 추진하고 있으며, 이로 인해 국내 보수 강경파와 갈등 중이다. 슈아비스 합격 기준을 직접 설계했다는 이야기가 있다.</div>
+                <div class="char-meta">
+                    <div class="char-meta-item"><strong>소속</strong> 로이람 왕실 / 슈아비스</div>
+                    <div class="char-meta-item"><strong>종족</strong> 인간</div>
+                    <div class="char-meta-item"><strong>성향</strong> 개혁주의자</div>
+                </div>
+            </div>
         </div>
+
+        <!-- 루네스 -->
+        <div class="char-card">
+            <div class="char-banner" style="--accent:#3a6aaa;"></div>
+            <div class="char-body">
+                <div class="char-title">글리세 학회 시그마인 대표</div>
+                <div class="char-name">루네스</div>
+                <div class="char-tags">
+                    <span class="char-tag">인간</span>
+                    <span class="char-tag">글리세 학회</span>
+                    <span class="char-tag">시그마인</span>
+                </div>
+                <div class="char-desc">글리세 학회의 최고 학자이자 현 대표. 이명은 "강철의 학자". 냉혹한 판단력과 광범위한 지식을 갖추었으며, 전임 평의회의 폐쇄적인 엘리트주의를 개혁하여 능력 있는 자는 출신을 막론하고 입학할 수 있도록 했다. 기어 노마드 프로젝트의 발의자. 베네티시아의 비밀을 해독하는 데 강한 집착을 보인다.</div>
+                <div class="char-meta">
+                    <div class="char-meta-item"><strong>소속</strong> 글리세 학회</div>
+                    <div class="char-meta-item"><strong>종족</strong> 인간</div>
+                    <div class="char-meta-item"><strong>역할</strong> 기어 노마드 프로젝트 주도</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 클리우스 -->
+        <div class="char-card">
+            <div class="char-banner" style="--accent:#5a2a8a;"></div>
+            <div class="char-body">
+                <div class="char-title">클리우스 / 판티닉스 수장</div>
+                <div class="char-name">클리우스</div>
+                <div class="char-tags">
+                    <span class="char-tag">불명</span>
+                    <span class="char-tag">판티닉스</span>
+                    <span class="char-tag">세리로프</span>
+                </div>
+                <div class="char-desc">비밀 세력 판티닉스의 수장이자 세리로프의 최고 지도자. 정체가 베일에 싸여 있으며, 종족도 불명이다. 클리우스가 천사인지, 인간인지, 혹은 다른 존재인지조차 공식적으로 확인된 바 없다. 판티닉스를 통해 대륙 각 세력에 직간접적으로 영향을 미치고 있다고 알려져 있다. 목적과 동기 또한 불명확하다.</div>
+                <div class="char-meta">
+                    <div class="char-meta-item"><strong>소속</strong> 판티닉스 / 세리로프</div>
+                    <div class="char-meta-item"><strong>종족</strong> 불명</div>
+                    <div class="char-meta-item"><strong>위험도</strong> 미지수</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 디케 샤이노슐저 -->
+        <div class="char-card">
+            <div class="char-banner" style="--accent:#c8a84c;"></div>
+            <div class="char-body">
+                <div class="char-title">테스모스 건국자 / 수장</div>
+                <div class="char-name">디케 샤이노슐저</div>
+                <div class="char-tags">
+                    <span class="char-tag">천사</span>
+                    <span class="char-tag">테스모스</span>
+                    <span class="char-tag">중위천사</span>
+                </div>
+                <div class="char-desc">테스모스의 건국자이자 현 수장. 혁명 집단 멘토챠일을 이끌고 부패한 렌제스를 타도하여 테스모스를 세운 인물. 천사 종족으로, 아크뉴엘에서 내려온 중위 천사로 알려져 있다. 강자만이 통치할 수 있다는 원칙 아래 테스모스를 운영하며, 이계를 극도로 혐오한다. 천사가 왜 이계를 혐오하는지에 대해서는 다양한 추측이 있다.</div>
+                <div class="char-meta">
+                    <div class="char-meta-item"><strong>소속</strong> 테스모스 / 아크뉴엘</div>
+                    <div class="char-meta-item"><strong>종족</strong> 천사 (중위)</div>
+                    <div class="char-meta-item"><strong>성향</strong> 강권주의자</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 이니스 아트리스 -->
+        <div class="char-card">
+            <div class="char-banner" style="--accent:#c03a2a;"></div>
+            <div class="char-body">
+                <div class="char-title">반-로므 기술원 평의회 의장</div>
+                <div class="char-name">이니스 아트리스</div>
+                <div class="char-tags">
+                    <span class="char-tag">인간</span>
+                    <span class="char-tag">반-로므</span>
+                    <span class="char-tag">기술원</span>
+                </div>
+                <div class="char-desc">반-로므의 현 대표이자 기술원 평의회 의장. 냉철하고 실용적인 인물로, 감정보다 데이터를 중시한다. 마법 혐오 정책의 강경 유지파이지만 외교적으로는 유연한 태도를 보인다. 반-로므의 기술 수출 전략을 주도하고 있으며, 비행선과 합금 수출을 통해 타국에 대한 경제적 영향력을 키우고 있다. 마법 억압 장치 연구에 관여했다는 소문이 있다.</div>
+                <div class="char-meta">
+                    <div class="char-meta-item"><strong>소속</strong> 반-로므 기술원 평의회</div>
+                    <div class="char-meta-item"><strong>종족</strong> 인간</div>
+                    <div class="char-meta-item"><strong>성향</strong> 실용주의자</div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <footer>
         <p class="footer-logo">BENETISIA</p>
-        <p class="footer-sub">Official Archive — World &amp; Character Reference</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
     </footer>
 </body>
 </html>

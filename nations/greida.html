@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,20 @@
     <title>그레이다 — BENETISIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .rel-row { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border-dim); font-size: 0.88rem; }
+        .rel-row:last-child { border-bottom: none; }
+        .rel-nation { min-width: 90px; font-weight: 600; color: var(--text); font-size: 0.84rem; }
+        .rel-status { font-size: 0.68rem; padding: 0.1rem 0.4rem; border: 1px solid; white-space: nowrap; margin-right: 0.4rem; font-family: var(--f-title); letter-spacing: 0.04em; flex-shrink: 0; }
+        .rel-good { color: #1a7a3a; border-color: #a0d8b0; background: #e8f8ee; }
+        .rel-neutral { color: #7a6a1a; border-color: #d8c870; background: #f8f4e0; }
+        .rel-bad { color: #8a1a1a; border-color: #d8a0a0; background: #f8e8e8; }
+        .rel-desc { color: var(--text-dim); font-size: 0.84rem; flex: 1; }
+        .tier-list { list-style: none; margin: 1rem 0; counter-reset: tier; }
+        .tier-item { display: flex; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--border-dim); align-items: flex-start; }
+        .tier-name { font-family: var(--f-title); font-size: 0.78rem; color: var(--gold); min-width: 100px; letter-spacing: 0.04em; }
+        .tier-desc { font-size: 0.86rem; color: var(--text-dim); line-height: 1.7; }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -34,10 +48,10 @@
         </nav>
     </header>
 
-    <div class="wiki-hero" style="--c-bg: rgba(122,58,170,0.25)">
+    <div class="wiki-hero" style="background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(122,58,170,0.22) 0%, transparent 70%), var(--black);">
         <p class="wiki-breadcrumb"><a href="../nations.html">국가</a> / 그레이다</p>
         <h1>그레이다</h1>
-        <p class="tagline">마녀들과 악마들의 나라</p>
+        <p class="tagline">마녀들과 악마들의 나라 — 계약의 마법이 살아 숨쉬는 곳</p>
     </div>
 
     <div class="wiki-body">
@@ -45,37 +59,70 @@
             <div class="info-box">
                 <h3>기본 정보</h3>
                 <table>
-                    <tr><th>특징</th><td>순수 마법 발달</td></tr>
+                    <tr><th>위치</th><td>대륙 서쪽</td></tr>
+                    <tr><th>수도</th><td>비트레아</td></tr>
                     <tr><th>화폐</th><td>넬로 (고양이 그림 동전)</td></tr>
-                    <tr><th>치안</th><td>마탑, 결계</td></tr>
-                    <tr><th>이계 성향</th><td>허용 (적극적)</td></tr>
-                    <tr><th>역사</th><td>베네티시아 멸망 전부터 존재</td></tr>
+                    <tr><th>통치 체계</th><td>대마녀 평의회</td></tr>
+                    <tr><th>마법 성향</th><td>허용 (이계 포함)</td></tr>
+                    <tr><th>주요 산업</th><td>마법 서비스·연금술·의뢰업</td></tr>
+                    <tr><th>소속 세력</th><td><a href="../factions/akumagumi.html" style="color:var(--gold);text-decoration:none;">아쿠마구미</a></td></tr>
+                    <tr><th>역사</th><td>혼란기 이전부터 존재</td></tr>
+                    <tr><th>위험도</th><td>★★★☆☆ (이계 변수)</td></tr>
                 </table>
             </div>
         </aside>
 
         <article class="wiki-content">
+
             <h2>개요</h2>
-            <p>마녀들과 악마들의 나라. 근대 이전부터 존재해 왔으며, 이계의 존재들과 접점이 많은 나라다. 베네티시아 멸망 당시에도 존재했던 유서 깊은 국가이기도 하다.</p>
-            <p>이계의 간섭을 허용해 준 탓에 이계의 존재들이 마음 터 놓고 활동할 수 있는 장소가 되었다. 순수 마법이 발달하여 마탑과 결계를 통해 치안을 관리하고 있다.</p>
+            <p>마녀들과 악마들의 나라. 근대 이전부터 존재해 왔으며, 이계의 존재들과 접점이 많은 나라다. 베네티시아 멸망 당시에도 버텨냈던 유서 깊은 국가로, 그레이다의 마탑은 혼란기에도 결계를 유지하여 도시 자체를 보호했다.</p>
+            <p>이계의 간섭을 허용해 준 탓에 이계의 존재들이 마음 터놓고 활동할 수 있는 장소가 되었다. 이것이 위험 요소인 동시에 그레이다의 강점이기도 하다 — 순수 마법이 발달하여 마탑과 결계를 통해 치안을 관리하며, 대부분의 위협은 내부에서 자체적으로 해결한다.</p>
+            <div class="highlight">화폐 <strong>넬로(Nello)</strong> — 고양이 그림이 그려진 동전. 그레이다에서만 통용되는 화폐이지만, 연금술 재료로도 가치가 있어 수집가들이 고가에 거래하기도 한다.</div>
 
-            <h2>구성원</h2>
-            <p>마녀들만 살기 때문에 여성만 존재하는 것이 표면적이지만, 가끔 이레귤러가 있다. 마녀들과 친하게 지내고 싶은 악마들이 많이 찾아와 심심찮게 돌아다니기도 한다.</p>
+            <h2>수도 비트레아</h2>
+            <p>그레이다의 수도 <strong>비트레아(Vitrea)</strong>는 좁고 구불구불한 골목길과 높이 솟은 마탑들이 특징이다. 도시 전체가 수백 년의 역사를 지닌 결계망으로 덮여 있어, 인가 없이 들어오는 강력한 마력이나 이계 에너지는 자동으로 감지된다.</p>
+            <p>건물마다 마법 조명이 걸려 있어 야경이 아름다우며, 특히 보름달이 뜨는 밤에는 도시 전체가 보랏빛으로 물든다고 전해진다. 거리에서는 마녀들이 자유롭게 빗자루를 타고 이동하며, 거리 노점에서는 마약초부터 계약서 작성 서비스까지 다양한 것들이 팔린다.</p>
 
-            <h2>통치 체계</h2>
-            <p>대마녀를 중심으로 여러 마법 파벌의 장로들이 존재하여 제자들을 가르치는 방식으로 운영된다.</p>
+            <h2>통치 체계와 마녀 계층</h2>
+            <p>그레이다는 <strong>대마녀 평의회</strong>가 실질적인 통치권을 갖는다. 평의회는 각 마법 파벌의 대표 대마녀들로 구성되며, 만장일치가 원칙이다. 의결이 어려울 경우 결투 마법으로 결정권을 가리기도 한다.</p>
+            <ul class="tier-list">
+                <li class="tier-item"><span class="tier-name">그란드 마지카</span><span class="tier-desc">대마녀. 각 파벌의 정점. 수백 년 이상을 살아온 최상위 마법사들로, 대부분 외형이 젊다.</span></li>
+                <li class="tier-item"><span class="tier-name">마지카</span><span class="tier-desc">정식 마녀. 자신만의 마법 계약서를 보유하고 독립적으로 활동할 수 있는 자들.</span></li>
+                <li class="tier-item"><span class="tier-name">아프렌티스</span><span class="tier-desc">수련 마녀. 마지카의 제자로, 아직 독립 계약 능력이 없다. 스승의 지시에 따라 행동한다.</span></li>
+                <li class="tier-item"><span class="tier-name">이레귤러</span><span class="tier-desc">공식 계층 외의 존재. 남성 마법사나 이계인 등 예외적 케이스. 특별한 대우를 받는다.</span></li>
+            </ul>
+
+            <h2>구성원과 이레귤러</h2>
+            <p>표면적으로는 마녀들만 살기 때문에 여성만 존재하는 것처럼 보이지만, 가끔 이레귤러가 있다. 강력한 마력을 지닌 남성이나 이계 존재가 예외적으로 그레이다에서 활동하는 경우로, 이레귤러는 통상의 계층 구조에 속하지 않으며 별도의 대우를 받는다. 어떤 이레귤러는 대마녀보다 더 강하기도 하다.</p>
+            <p>마녀들과 친하게 지내고 싶은 악마들이 많이 찾아와 심심찮게 돌아다니기도 한다. 이들 중 일부가 뭉쳐 결성된 것이 <strong>아쿠마구미</strong>다.</p>
+
+            <h2>계약 마법</h2>
+            <p>그레이다 마법의 가장 큰 특징은 <strong>계약 마법</strong>이다. 의지와 대가를 명문화하여 효과를 발동시키는 방식으로, 그레이다 마녀들은 이를 세련되게 다루는 것으로 유명하다. 계약서는 마녀가 직접 작성하며, 계약을 어기면 마녀에게 그 대가가 돌아가거나 상대방에게 저주가 걸린다.</p>
+            <p>고위 마녀들은 계약 마법 외에도 예언, 저주, 소환 등 다양한 마법을 구사하지만, 그레이다의 마법은 기본적으로 "주고받음"의 원리에서 벗어나지 않는다.</p>
 
             <h2>아쿠마구미</h2>
-            <p>그레이다의 뒷골목에 자리잡은 악마들의 조직. 품행이 저속한 악마들의 모임에서 발전해 깡패 집단으로 변모했다. 마녀들에게 깍듯이 대하며 "아가씨"라고 부른다. 마녀들에게 선물을 주면서 계약을 요청하기도 한다.</p>
-            <p>의뢰를 받기도 하여, 마녀들에게 의뢰를 받아 완수하고 선물을 받으면 엄청 좋아한다.</p>
+            <p>그레이다 뒷골목에 자리잡은 악마들의 조직. 품행이 저속한 악마들의 모임에서 발전해 깡패 집단으로 변모했다. 마녀들에게 깍듯이 대하며 "아가씨"라고 부른다. 마녀들에게 선물을 주면서 계약을 요청하기도 한다. 의뢰를 받기도 하여, 마녀들에게 의뢰를 받아 완수하고 선물을 받으면 엄청 좋아한다.</p>
+            <p>그레이다 당국은 아쿠마구미를 공식적으로 단속하지 않는다. 마녀들을 흠모하는 조직 특성상 그레이다 내에서의 행동은 비교적 절제되어 있기 때문이다. 그러나 그레이다 밖에서 아쿠마구미가 일으키는 사건들은 종종 다른 국가들의 항의를 받기도 한다.</p>
 
-            <div class="highlight">화폐 <strong>넬로</strong> — 고양이 그림이 그려진 동전. 그레이다에서만 통용되는 화폐.</div>
+            <h2>음식과 일상</h2>
+            <p>그레이다 요리는 연금술과 결합된 독특한 형태다. 허브와 마약초를 일상적으로 요리에 사용하며, 일부 요리는 먹는 것만으로 미약한 마법 효과가 생긴다. 식사 자리에서 조용히 독을 넣거나 특수 효과 재료를 사용하는 것은 사회적으로 금지되어 있지만, 실제로 이루어지는 경우도 있다. 이 때문에 타국 사람들은 그레이다에서 식사를 거부하는 경우가 많다.</p>
+
+            <h2>국가 간 관계</h2>
+            <div class="rel-row"><span class="rel-nation">카르다</span><span class="rel-status rel-good">우호</span><span class="rel-desc">이계 친화 국가끼리의 연대. 마법 기술 교류 활발.</span></div>
+            <div class="rel-row"><span class="rel-nation">테스모스</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">서로 관여하지 않는 불간섭 원칙. 이계인 공통 이슈로 간헐적 접촉.</span></div>
+            <div class="rel-row"><span class="rel-nation">로이람</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">마법 배척 정책으로 인해 역사적 긴장 관계. 현재는 교역 유지.</span></div>
+            <div class="rel-row"><span class="rel-nation">반-로므</span><span class="rel-status rel-bad">적대</span><span class="rel-desc">마법 혐오 국가인 반-로므와 무역 금지 상태. 상호 입국 금지.</span></div>
+            <div class="rel-row"><span class="rel-nation">글리세 학회</span><span class="rel-status rel-neutral">중립</span><span class="rel-desc">지식 교류 측면에서는 이해 관계가 맞지만, 마법 해석 차이로 갈등도 있음.</span></div>
+
+            <h2>기어 노마드와의 관계</h2>
+            <p>그레이다는 기어 노마드들에게 독특한 위치다. 마법 관련 의뢰가 많고, 아쿠마구미나 이계 생물 관련 사건이 자주 발생한다. 마녀들은 때때로 기어 노마드에게 특수 의뢰를 주기도 하며, 보상으로 마법 아이템이나 정보를 제공한다. 단, 그레이다에서 받은 의뢰는 계약 마법의 형태로 이루어지므로 조건을 꼼꼼히 확인해야 한다.</p>
+
         </article>
     </div>
 
     <footer>
         <p class="footer-logo">BENETISIA</p>
-        <p class="footer-sub">Official Archive — World &amp; Character Reference</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
     </footer>
 </body>
 </html>
