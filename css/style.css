@@ -82,7 +82,7 @@ body {
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
-    width: 300px;
+    width: 320px;
     background: #0d0b18;
     border: 1px solid rgba(200,168,76,0.22);
     z-index: 3000;
@@ -98,11 +98,13 @@ body {
     flex-direction: column;
     padding: 0.7rem 1rem;
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    text-decoration: none;
+    text-decoration: none !important;
+    color: rgba(255,255,255,0.88);
     transition: background 0.12s;
     gap: 0.15rem;
 }
 
+.search-item:visited { color: rgba(255,255,255,0.88); }
 .search-item:last-child { border-bottom: none; }
 .search-item:hover { background: rgba(200,168,76,0.08); }
 
