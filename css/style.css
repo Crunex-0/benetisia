@@ -431,6 +431,28 @@ footer {
 
 .bgm-m-vol::-webkit-slider-runnable-track { background: transparent; }
 
+/* 네브바 하단 전체 너비 진척도 바 */
+.bgm-m-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255,255,255,0.06);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.bgm-m-progress:hover { height: 3px; }
+
+.bgm-m-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #c8a84c, #f0d080);
+    width: 0%;
+    transition: width 0.8s linear;
+    pointer-events: none;
+}
+
 @media (max-width: 900px) {
     .bgm-m-vol-wrap { display: none; }
     .bgm-m-name { max-width: 90px; }

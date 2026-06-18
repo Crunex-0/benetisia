@@ -71,6 +71,7 @@
         S.time = au.currentTime;
         writeLS();
         renderProgress();
+        renderMiniProg();
     }
 
     // Go to track index and optionally play
@@ -155,6 +156,20 @@
 
         const nav = document.querySelector('.main-nav');
         if (nav) nav.appendChild($mini);
+
+        // 네브바 하단 전체 너비 진척도 바
+        const header = document.querySelector('.site-header');
+        if (header) {
+            const prog = document.createElement('div');
+            prog.className = 'bgm-m-progress';
+            prog.innerHTML = '<div class="bgm-m-progress-fill"></div>';
+            prog.addEventListener('click', function (e) {
+                if (!au.duration) return;
+                const r = this.getBoundingClientRect();
+                au.currentTime = ((e.clientX - r.left) / r.width) * au.duration;
+            });
+            header.appendChild(prog);
+        }
     }
 
     function renderMini() {
@@ -163,6 +178,12 @@
         $mini.querySelector('.bgm-m-name').textContent = dname(tracks[S.idx]);
         $mini.querySelector('.bgm-m-mute').textContent = S.muted ? '🔇' : '🔊';
         $mini.querySelector('.bgm-m-vol').value        = Math.round(S.vol * 100);
+    }
+
+    function renderMiniProg() {
+        const fill = document.querySelector('.bgm-m-progress-fill');
+        if (!fill || !au.duration) return;
+        fill.style.width = (au.currentTime / au.duration * 100) + '%';
     }
 
     // ── Popup ────────────────────────────────────────────────────
