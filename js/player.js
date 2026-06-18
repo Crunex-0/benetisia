@@ -318,7 +318,11 @@
 
     // ── Init ─────────────────────────────────────────────────────
     async function init() {
+        const isFirstVisit = (localStorage.getItem(LS_KEY) === null);
         readLS();
+        // 첫 방문: 0번 트랙 자동재생
+        if (isFirstVisit) { S.idx = 0; S.playing = true; S.time = 0; }
+
         buildMini();
 
         try {
@@ -339,18 +343,18 @@
         au.volume = S.muted ? 0 : S.vol;
         au.load();
 
-        // loadedmetadata: duration 확정 후 위치 복원
         au.addEventListener('loadedmetadata', function onMeta() {
-            au.removeEventListener('loadedmetadata', onMeta);
             if (S.time > 1) {
+                // seek 완료 후 재생 — seek 전에 play하면 0초부터 시작하는 버그 방지
                 au.currentTime = S.time;
-            }
-        }, { once: true });
-
-        // canplay: 재생 준비 완료 후 재생 시작
-        au.addEventListener('canplay', function onReady() {
-            au.removeEventListener('canplay', onReady);
-            if (S.playing) {
+                if (S.playing) {
+                    au.addEventListener('seeked', function () {
+                        au.play().catch(() => { S.playing = false; writeLS(); });
+                        renderMini();
+                    }, { once: true });
+                    return;
+                }
+            } else if (S.playing) {
                 au.play().catch(() => { S.playing = false; writeLS(); });
             }
             renderMini();
