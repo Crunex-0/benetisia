@@ -3,42 +3,6 @@
    Light Theme / Black & Gold
    =========================== */
 
-/* ── Search ── */
-.nav-search {
-    display: flex;
-    align-items: center;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 0.3rem 0.8rem;
-    gap: 0.5rem;
-}
-
-.nav-search input {
-    background: none;
-    border: none;
-    outline: none;
-    color: rgba(255,255,255,0.8);
-    font-size: 0.82rem;
-    font-family: var(--f-body);
-    width: 120px;
-}
-
-.nav-search input::placeholder { color: rgba(255,255,255,0.3); }
-
-.nav-search button {
-    background: none;
-    border: none;
-    color: rgba(255,255,255,0.4);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 0;
-    transition: color 0.2s;
-}
-
-.nav-search button svg { width: 15px; height: 15px; }
-.nav-search button:hover { color: var(--gold-lt); }
-
 /* ── Hero Banner ── */
 .hero-banner {
     position: relative;
@@ -520,10 +484,6 @@
     .content-layout { grid-template-columns: 1fr; }
     .content-sidebar { position: static; }
     .article-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 900px) {
-    .nav-search { display: none; }
 }
 
 @media (max-width: 640px) {
