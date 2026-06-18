@@ -343,8 +343,11 @@ footer {
     .info-box { position: static; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
     .nav-links { display: none; }
+}
+
+@media (max-width: 640px) {
     .overview-grid { grid-template-columns: 1fr; }
 }
 
@@ -461,6 +464,8 @@ footer {
     .bgm-m-vol-wrap { display: none; }
     .bgm-m-name { max-width: 90px; }
     .main-nav { padding-right: 185px; }
+    .nav-links { gap: 0.7rem; }
+    .nav-links a { font-size: 0.73rem; }
 }
 
 @media (max-width: 640px) {
