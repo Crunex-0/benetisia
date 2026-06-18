@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 — BENETISIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 2rem 0; }
+        .media-placeholder { background: var(--bg2); border: 1px solid var(--border); aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; color: var(--text-dim); }
+        .media-placeholder-icon { font-size: 2rem; opacity: 0.3; }
+        .media-placeholder span { font-size: 0.8rem; opacity: 0.5; font-family: var(--f-title); letter-spacing: 0.06em; }
+        .media-cat { font-family: var(--f-title); font-size: 0.85rem; letter-spacing: 0.12em; color: var(--black); padding-bottom: 0.5rem; border-bottom: 2px solid var(--gold); margin: 2.5rem 0 1rem; display: inline-block; }
+        @media (max-width: 640px) { .media-grid { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="main-nav">
+            <a class="nav-logo" href="index.html">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                    <polygon points="20,2 38,20 20,38 2,20" stroke="#c8a84c" stroke-width="1.5" fill="none"/>
+                    <polygon points="20,8 32,20 20,32 8,20" stroke="#c8a84c" stroke-width="1" fill="rgba(200,168,76,0.08)"/>
+                    <circle cx="20" cy="20" r="3" fill="#c8a84c"/>
+                </svg>
+                <span class="logo-text">
+                    <span class="logo-main">BENETISIA</span>
+                    <span class="logo-sub">Official Archive</span>
+                </span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="lore.html">세계관</a></li>
+                <li><a href="nations.html">국가</a></li>
+                <li><a href="factions.html">세력</a></li>
+                <li><a href="races.html">종족</a></li>
+                <li><a href="characters.html">인물</a></li>
+                <li><a href="gear-nomad.html">기어 노마드</a></li>
+                <li><a href="guide.html">자료실</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <h1>미디어</h1>
+        <p>베네티시아 세계관 이미지 및 시각 자료</p>
+    </div>
+
+    <div style="max-width:1100px; margin:0 auto; padding:3rem 2rem 5rem;">
+
+        <div style="background:var(--bg2); border:1px solid var(--border); border-left:3px solid var(--gold); padding:1.2rem 1.5rem; margin-bottom:2rem;">
+            <p style="font-size:0.88rem; color:var(--text-dim); line-height:1.75; margin:0;">이미지와 시각 자료는 순차적으로 업로드됩니다. 세계관 일러스트, 국가 지도, 캐릭터 일러스트 등이 추가될 예정입니다.</p>
+        </div>
+
+        <p class="media-cat">세계관 지도</p>
+        <div class="media-grid">
+            <div class="media-placeholder">
+                <span class="media-placeholder-icon">🗺</span>
+                <span>대륙 전체 지도</span>
+                <span style="font-size:0.7rem; opacity:0.4; font-family:inherit;">준비 중</span>
+            </div>
+            <div class="media-placeholder">
+                <span class="media-placeholder-icon">🗺</span>
+                <span>국가별 세부 지도</span>
+                <span style="font-size:0.7rem; opacity:0.4; font-family:inherit;">준비 중</span>
+            </div>
+            <div class="media-placeholder">
+                <span class="media-placeholder-icon">🗺</span>
+                <span>금지구역 지도</span>
+                <span style="font-size:0.7rem; opacity:0.4; font-family:inherit;">준비 중</span>
+            </div>
+        </div>
+
+        <p class="media-cat">국가 일러스트</p>
+        <div class="media-grid">
+            <div class="media-placeholder">
+                <span class="media-placeholder-icon">🏛</span>
+                <span>로이람 황도</span>
+                <span style="font-size:0.7rem; opacity:0.4; font-family:inherit;">준비 중</span>
+            </div>
+            <div class="media-placeholder">
+                <span class="media-placeholder-icon">🏛</span>
+                <span>글리세 학회</span>
+                <span style="font-size:0.7rem; opacity:0.4; font-family:inherit;">준비 중</span>
+            </div>
+            <div class="media-placeholder">
+                <span class="media-placeholder-icon">🏛</span>
+                <span>테스모스 야경</span>
+                <span style="font-size:0.7rem; opacity:0.4; font-family:inherit;">준비 중</span>
+            </div>
+        </div>
+
+        <p class="media-cat">인물 일러스트</p>
+        <div class="media-grid">
+            <div class="media-placeholder">
+                <span class="media-placeholder-icon">👤</span>
+                <span>루네스</span>
+                <span style="font-size:0.7rem; opacity:0.4; font-family:inherit;">준비 중</span>
+            </div>
+            <div class="media-placeholder">
+                <span class="media-placeholder-icon">👤</span>
+                <span>클리우스</span>
+                <span style="font-size:0.7rem; opacity:0.4; font-family:inherit;">준비 중</span>
+            </div>
+            <div class="media-placeholder">
+                <span class="media-placeholder-icon">👤</span>
+                <span>디케 샤이노슐저</span>
+                <span style="font-size:0.7rem; opacity:0.4; font-family:inherit;">준비 중</span>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p class="footer-logo">BENETISIA</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
+    </footer>
+
+</body>
+</html>

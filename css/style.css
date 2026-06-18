@@ -84,16 +84,17 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.8rem;
+    gap: 1.4rem;
 }
 
 .nav-links a {
     color: rgba(255,255,255,0.65);
     text-decoration: none;
-    font-size: 0.82rem;
-    letter-spacing: 0.06em;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
     transition: color 0.2s;
     font-family: var(--f-title);
+    white-space: nowrap;
 }
 
 .nav-links a:hover,

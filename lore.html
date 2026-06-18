@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세계관 입문 — BENETISIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .lore-toc { list-style: none; }
+        .lore-toc li { padding: 0.35rem 0; border-bottom: 1px solid var(--border-dim); }
+        .lore-toc li:last-child { border-bottom: none; }
+        .lore-toc a { font-size: 0.82rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+        .lore-toc a:hover { color: var(--gold); }
+        .timeline { list-style: none; margin: 1.2rem 0; }
+        .timeline li { position: relative; padding: 0.6rem 0 0.6rem 1.5rem; border-left: 2px solid var(--border); }
+        .timeline li::before { content: ''; position: absolute; left: -5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+        .timeline-year { font-family: var(--f-title); font-size: 0.75rem; color: var(--gold); letter-spacing: 0.06em; display: block; margin-bottom: 0.2rem; }
+        .concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.2rem 0; }
+        .concept-card { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 1rem 1.2rem; }
+        .concept-card h4 { font-family: var(--f-title); font-size: 0.8rem; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+        .concept-card p { font-size: 0.84rem; color: var(--text-dim); line-height: 1.7; margin: 0; }
+        .reading-order { counter-reset: reading; list-style: none; margin: 1rem 0; }
+        .reading-order li { counter-increment: reading; display: flex; gap: 0.8rem; align-items: flex-start; padding: 0.6rem 0; border-bottom: 1px solid var(--border-dim); }
+        .reading-order li::before { content: counter(reading); font-family: var(--f-title); font-size: 0.75rem; color: var(--gold); min-width: 20px; margin-top: 0.1rem; }
+        .reading-order li a { color: var(--text); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+        .reading-order li a:hover { color: var(--gold); }
+        .reading-order li span { font-size: 0.78rem; color: var(--text-dim); display: block; }
+        @media (max-width: 640px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="main-nav">
+            <a class="nav-logo" href="index.html">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                    <polygon points="20,2 38,20 20,38 2,20" stroke="#c8a84c" stroke-width="1.5" fill="none"/>
+                    <polygon points="20,8 32,20 20,32 8,20" stroke="#c8a84c" stroke-width="1" fill="rgba(200,168,76,0.08)"/>
+                    <circle cx="20" cy="20" r="3" fill="#c8a84c"/>
+                </svg>
+                <span class="logo-text">
+                    <span class="logo-main">BENETISIA</span>
+                    <span class="logo-sub">Official Archive</span>
+                </span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="lore.html" class="active">세계관</a></li>
+                <li><a href="nations.html">국가</a></li>
+                <li><a href="factions.html">세력</a></li>
+                <li><a href="races.html">종족</a></li>
+                <li><a href="characters.html">인물</a></li>
+                <li><a href="gear-nomad.html">기어 노마드</a></li>
+                <li><a href="guide.html">자료실</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wiki-hero">
+        <p class="wiki-breadcrumb">BENETISIA / 세계관 입문</p>
+        <h1>세계관 입문</h1>
+        <p class="tagline">기계와 마법, 그리고 이계가 공존하는 대륙 — 베네티시아</p>
+    </div>
+
+    <div class="wiki-body">
+        <aside>
+            <div class="info-box">
+                <h3>목차</h3>
+                <ul class="lore-toc">
+                    <li><a href="#overview">세계 개요</a></li>
+                    <li><a href="#chaos">혼란기</a></li>
+                    <li><a href="#present">현재 상황</a></li>
+                    <li><a href="#concepts">핵심 개념</a></li>
+                    <li><a href="#timeline">세계 연표</a></li>
+                    <li><a href="#glossary">핵심 용어</a></li>
+                    <li><a href="#reading">추천 열람 순서</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="wiki-content">
+
+            <h2 id="overview">세계 개요</h2>
+            <p><strong>베네티시아</strong>는 태엽의 신(법칙을 관장하는 창조신)이 설계한 대륙입니다. 기계문명과 마법, 그리고 이계(異界)가 공존하는 독특한 세계로, 한때 거대한 단일 제국 아래 하나로 묶여 있었습니다.</p>
+            <p>약 200년 전, 이계에서 비롯된 대격변 <strong>혼란기</strong>가 구 제국을 무너뜨렸고, 현재는 9개의 독립 국가가 저마다의 방식으로 발전과 재건을 이어가고 있습니다. 마법을 배척하는 군사 강국이 있는가 하면, 기술과 지식을 쌓은 학회 국가, 이계와 손잡은 도시, 기계 문명의 정수를 추구하는 나라까지 — 각국의 색깔은 극명하게 갈립니다.</p>
+            <div class="highlight">"태엽의 신이 설계한 거대한 시계 속에서, 아홉 개의 톱니바퀴는 각자의 방향으로 돌고 있다."</div>
+
+            <h2 id="chaos">혼란기 (The Chaos Age)</h2>
+            <p>약 200년 전, 이계(異界)에서 대규모 존재들이 베네티시아 대륙에 침입했습니다. 이 사건을 <strong>혼란기</strong>라 부릅니다. 구 베네티시아 제국의 황도(皇都)는 전장이 되어 초토화되었고, 살아남은 자들은 결계 마법으로 황도 전체를 봉인하는 극단적 선택을 내렸습니다.</p>
+            <p>이것이 현재의 <strong>금지구역</strong>의 기원입니다. 황도를 잃은 구 제국은 구심점을 상실하여 해체되었고, 대륙 각지의 세력들은 독자적인 국가를 세우기 시작했습니다. 혼란기의 상흔은 지금도 각국의 외교 정책과 마법에 대한 태도에 깊은 영향을 미치고 있습니다.</p>
+
+            <h2 id="present">현재 상황</h2>
+            <p>혼란기로부터 200여 년이 흐른 현재, 대륙은 표면적으로 안정을 되찾은 듯 보입니다. 9개 국가는 저마다의 체제를 확립하고 교역과 외교를 이어가고 있습니다. 그러나 내부를 들여다보면 복잡한 긴장이 흐르고 있습니다.</p>
+            <p>이계의 위협은 완전히 사라지지 않았습니다. 마력이 불안정한 지역에서는 <strong>이계 통로</strong>가 불시에 열리며, 각국은 이에 대응하는 방식이 제각각입니다. 이러한 배경에서 <strong>기어 노마드</strong> 체계가 등장하여 대륙을 넘나들며 위협에 대처하는 역할을 담당하게 되었습니다.</p>
+
+            <h2 id="concepts">핵심 개념</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h4>태엽의 신 / 톱니바퀴의 신</h4>
+                    <p>이 세계의 창조신. 세계가 거대한 시계처럼 균형 잡히게 돌아가도록 설계했습니다. 직접 개입하지 않고, 대변자 '클리우스'를 통해 세계에 관여합니다.</p>
+                </div>
+                <div class="concept-card">
+                    <h4>이계 (異界)</h4>
+                    <p>베네티시아 대륙 너머에 존재하는 또 다른 차원. 이계인들이 수시로 베네티시아를 노리며, 혼란기의 대침략이 그 대표적 사건입니다.</p>
+                </div>
+                <div class="concept-card">
+                    <h4>마력 (魔力)</h4>
+                    <p>세계 전체에 흐르는 에너지. 마법 사용의 근원이며, 지역과 시기에 따라 농도가 다릅니다. 불안정할 경우 이계 침입의 원인이 됩니다.</p>
+                </div>
+                <div class="concept-card">
+                    <h4>기어 (Gear)</h4>
+                    <p>마력을 결정화하여 만든 에너지 결정체. 일반 기어는 기계 구동 동력원으로, 고위 기어는 특수한 마력 효과를 지닙니다.</p>
+                </div>
+                <div class="concept-card">
+                    <h4>금지구역</h4>
+                    <p>구 베네티시아 황도의 유적. 혼란기의 여파로 결계가 쳐진 봉인된 땅. 고도의 불안정 마력이 충만하며 진입은 금지됩니다.</p>
+                </div>
+                <div class="concept-card">
+                    <h4>기어 노마드 (Gear Nomad)</h4>
+                    <p>대륙을 넘나들며 임무를 수행하는 모험가들의 체계. 이계 위협 대응, 기어 수집, 의뢰 수행 등을 담당하며 누구나 지원할 수 있습니다.</p>
+                </div>
+            </div>
+
+            <h2 id="timeline">세계 연표</h2>
+            <ul class="timeline">
+                <li>
+                    <span class="timeline-year">태고 — 창조기</span>
+                    태엽의 신이 베네티시아 대륙을 설계하고 생명을 창조했다. 인간을 필두로 다양한 종족이 탄생했다.
+                </li>
+                <li>
+                    <span class="timeline-year">약 500년 전 — 제국 전성기</span>
+                    구 베네티시아 제국이 대륙 대부분을 통일하고, 기계문명과 마법이 조화를 이루는 황금기를 맞이했다.
+                </li>
+                <li>
+                    <span class="timeline-year">약 200년 전 — 혼란기</span>
+                    이계에서 대규모 침략이 발생. 황도가 초토화되고 결계로 봉인됨. 구 제국 해체, 대격변 시작.
+                </li>
+                <li>
+                    <span class="timeline-year">약 200~150년 전 — 분열기</span>
+                    9개 국가의 형성. 각지의 세력들이 독자적인 체제를 수립하고, 국경선이 확정됨.
+                </li>
+                <li>
+                    <span class="timeline-year">약 100년 전 — 재건기</span>
+                    글리세 학회 설립을 비롯해 마법 연구가 재개되고, 기어 기술이 발전함. 기어 노마드 체계 성립.
+                </li>
+                <li>
+                    <span class="timeline-year">현재 — 모험기</span>
+                    이계 통로 발생 증가, 국가 간 긴장 고조. 기어 노마드 활동이 활발해지고, 금지구역 탐사 시도가 이어지고 있다.
+                </li>
+            </ul>
+
+            <h2 id="glossary">핵심 용어 정리</h2>
+            <p>베네티시아 세계관에서 자주 등장하는 주요 용어 목록입니다. 표준 표기를 따라 주세요.</p>
+            <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin:1rem 0;">
+                <thead>
+                    <tr style="background:var(--bg3);">
+                        <th style="padding:0.6rem 0.8rem; text-align:left; font-family:var(--f-title); font-size:0.75rem; letter-spacing:0.06em; color:var(--text-dim); border-bottom:2px solid var(--border);">용어</th>
+                        <th style="padding:0.6rem 0.8rem; text-align:left; font-family:var(--f-title); font-size:0.75rem; letter-spacing:0.06em; color:var(--text-dim); border-bottom:2px solid var(--border);">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid var(--border-dim);">
+                        <td style="padding:0.55rem 0.8rem; font-weight:600; color:var(--gold);">로이람</td>
+                        <td style="padding:0.55rem 0.8rem; color:var(--text-dim);">대륙 중앙의 군사 강국. 중앙제국이라고도 불림.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border-dim);">
+                        <td style="padding:0.55rem 0.8rem; font-weight:600; color:var(--gold);">테스모스</td>
+                        <td style="padding:0.55rem 0.8rem; color:var(--text-dim);">북부의 상업 도시 국가. 이계인 공존 도시.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border-dim);">
+                        <td style="padding:0.55rem 0.8rem; font-weight:600; color:var(--gold);">반-로므</td>
+                        <td style="padding:0.55rem 0.8rem; color:var(--text-dim);">동부의 수인 왕국. 강력한 육체 능력을 가진 수인들의 땅.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border-dim);">
+                        <td style="padding:0.55rem 0.8rem; font-weight:600; color:var(--gold);">글리세 학회</td>
+                        <td style="padding:0.55rem 0.8rem; color:var(--text-dim);">서부의 마법·기술 연구 국가. 지식을 가장 중시하는 곳.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border-dim);">
+                        <td style="padding:0.55rem 0.8rem; font-weight:600; color:var(--gold);">판티닉스</td>
+                        <td style="padding:0.55rem 0.8rem; color:var(--text-dim);">태엽의 신의 교단 / 세계 균형을 감시하는 세력의 지도자.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border-dim);">
+                        <td style="padding:0.55rem 0.8rem; font-weight:600; color:var(--gold);">클리우스</td>
+                        <td style="padding:0.55rem 0.8rem; color:var(--text-dim);">태엽의 신의 대변자. 판티닉스의 역할을 수행하는 NPC.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border-dim);">
+                        <td style="padding:0.55rem 0.8rem; font-weight:600; color:var(--gold);">디케 샤이노슐저</td>
+                        <td style="padding:0.55rem 0.8rem; color:var(--text-dim);">천사족 출신의 주요 NPC. 아크뉴엘과 깊은 연관.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border-dim);">
+                        <td style="padding:0.55rem 0.8rem; font-weight:600; color:var(--gold);">슈아비스</td>
+                        <td style="padding:0.55rem 0.8rem; color:var(--text-dim);">로이람의 정예 군대. 여왕 루쟈냐 마르렌 직속.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0.55rem 0.8rem; font-weight:600; color:var(--gold);">세리로프</td>
+                        <td style="padding:0.55rem 0.8rem; color:var(--text-dim);">판티닉스 직속 산하 부대. 세계 각국에 조직이 뻗어 있음.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="reading">추천 열람 순서</h2>
+            <p>베네티시아가 처음이라면, 다음 순서로 읽는 것을 권장합니다.</p>
+            <ol class="reading-order">
+                <li>
+                    <div>
+                        <a href="lore.html">세계관 입문 (현재 페이지)</a>
+                        <span>기본 개념과 세계의 역사 파악</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="nations.html">국가 목록</a>
+                        <span>9개 국가를 훑어보며 관심 지역 찾기</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="races.html">종족 소개</a>
+                        <span>캐릭터 종족 선택을 위한 기초 정보</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="factions.html">세력 소개</a>
+                        <span>소속 세력과 조직 관계 이해</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="gear-nomad.html">기어 노마드 프로젝트</a>
+                        <span>TRPG 세션 참여 방식 확인</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="guide.html">자료실 / 캐릭터 제작 가이드</a>
+                        <span>캐릭터 제작 체크리스트 및 규칙 확인</span>
+                    </div>
+                </li>
+            </ol>
+
+        </article>
+    </div>
+
+    <footer>
+        <p class="footer-logo">BENETISIA</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
+    </footer>
+
+</body>
+</html>

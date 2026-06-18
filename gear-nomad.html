@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기어 노마드 프로젝트 — BENETISIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gn-toc { list-style: none; }
+        .gn-toc li { padding: 0.35rem 0; border-bottom: 1px solid var(--border-dim); }
+        .gn-toc li:last-child { border-bottom: none; }
+        .gn-toc a { font-size: 0.82rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+        .gn-toc a:hover { color: var(--gold); }
+        .grade-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin: 1.2rem 0; }
+        .grade-card { background: var(--bg2); border: 1px solid var(--border); padding: 1rem; text-align: center; }
+        .grade-label { font-family: var(--f-title); font-size: 1.6rem; font-weight: 700; margin-bottom: 0.3rem; display: block; }
+        .grade-name { font-size: 0.75rem; color: var(--text-dim); display: block; margin-bottom: 0.6rem; }
+        .grade-desc { font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; }
+        .grade-C .grade-label { color: #7a9a7a; }
+        .grade-B .grade-label { color: #5a7aaa; }
+        .grade-A .grade-label { color: var(--gold); }
+        .grade-S .grade-label { color: #c83a3a; }
+        .role-list { list-style: none; margin: 1rem 0; }
+        .role-list li { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--border-dim); align-items: start; }
+        .role-list li:last-child { border-bottom: none; }
+        .role-name { font-family: var(--f-title); font-size: 0.78rem; color: var(--gold); letter-spacing: 0.04em; }
+        .role-desc { font-size: 0.88rem; color: var(--text-dim); line-height: 1.7; }
+        .step-list { list-style: none; counter-reset: step; margin: 1rem 0; }
+        .step-list li { counter-increment: step; display: flex; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--border-dim); }
+        .step-list li::before { content: '0' counter(step); font-family: var(--f-title); font-size: 0.9rem; color: var(--gold); min-width: 28px; font-weight: 700; }
+        .step-list li span { font-size: 0.9rem; line-height: 1.75; color: var(--text); }
+        .step-list li span strong { color: var(--gold); }
+        @media (max-width: 640px) { .grade-grid { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="main-nav">
+            <a class="nav-logo" href="index.html">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                    <polygon points="20,2 38,20 20,38 2,20" stroke="#c8a84c" stroke-width="1.5" fill="none"/>
+                    <polygon points="20,8 32,20 20,32 8,20" stroke="#c8a84c" stroke-width="1" fill="rgba(200,168,76,0.08)"/>
+                    <circle cx="20" cy="20" r="3" fill="#c8a84c"/>
+                </svg>
+                <span class="logo-text">
+                    <span class="logo-main">BENETISIA</span>
+                    <span class="logo-sub">Official Archive</span>
+                </span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="lore.html">세계관</a></li>
+                <li><a href="nations.html">국가</a></li>
+                <li><a href="factions.html">세력</a></li>
+                <li><a href="races.html">종족</a></li>
+                <li><a href="characters.html">인물</a></li>
+                <li><a href="gear-nomad.html" class="active">기어 노마드</a></li>
+                <li><a href="guide.html">자료실</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wiki-hero" style="background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(154,120,8,0.15) 0%, transparent 70%), var(--black);">
+        <p class="wiki-breadcrumb">BENETISIA / 기어 노마드 프로젝트</p>
+        <h1>기어 노마드 프로젝트</h1>
+        <p class="tagline">과거의 진실을 찾아 대륙을 누비는 자들의 이야기</p>
+    </div>
+
+    <div class="wiki-body">
+        <aside>
+            <div class="info-box">
+                <h3>목차</h3>
+                <ul class="gn-toc">
+                    <li><a href="#overview">프로젝트 개요</a></li>
+                    <li><a href="#roles">참여자 유형</a></li>
+                    <li><a href="#grades">임무 등급</a></li>
+                    <li><a href="#cert">노마드 증서</a></li>
+                    <li><a href="#howto">참여 방법</a></li>
+                </ul>
+            </div>
+            <div class="info-box" style="margin-top:1rem;">
+                <h3>기본 정보</h3>
+                <table>
+                    <tr><th>형태</th><td>모험가 의뢰 체계</td></tr>
+                    <tr><th>관할</th><td>글리세 학회 협력</td></tr>
+                    <tr><th>등급</th><td>C / B / A / S</td></tr>
+                    <tr><th>참여 대상</th><td>누구나 지원 가능</td></tr>
+                    <tr><th>주요 거점</th><td>각국 노마드 길드</td></tr>
+                </table>
+            </div>
+        </aside>
+
+        <article class="wiki-content">
+
+            <h2 id="overview">프로젝트 개요</h2>
+            <p><strong>기어 노마드 프로젝트</strong>는 베네티시아 대륙 각국이 협력하여 수립한 모험가 의뢰 체계입니다. 이계 위협에 대응하고, 흩어진 기어를 수집하며, 대륙의 안전과 균형을 유지하기 위해 운영되고 있습니다.</p>
+            <p>혼란기 이후 국가 단독으로는 감당하기 어려운 위협들이 늘어났고, 이에 대륙 전역을 넘나들 수 있는 독립 모험가 체계가 필요해졌습니다. <strong>기어 노마드</strong>라 불리는 이 모험가들은 특정 국가에 예속되지 않으면서도 대륙 어디서나 활동할 수 있는 공인된 지위를 가집니다.</p>
+            <div class="highlight">"어디서 왔는가는 묻지 않는다. 어디로 가려 하는가만 증명하면 된다." — 기어 노마드 길드 규약 제1조</div>
+
+            <h2 id="roles">참여자 유형</h2>
+            <ul class="role-list">
+                <li>
+                    <span class="role-name">전투형 노마드</span>
+                    <span class="role-desc">이계 생물 퇴치, 의뢰 현장 전투 등 직접적인 위협 제거를 전문으로 합니다. 육체 능력과 전투 기술이 요구됩니다.</span>
+                </li>
+                <li>
+                    <span class="role-name">탐색형 노마드</span>
+                    <span class="role-desc">유적 탐사, 기어 수집, 실종자 수색 등 정보 수집과 탐사를 전문으로 합니다. 판단력과 지식이 중요합니다.</span>
+                </li>
+                <li>
+                    <span class="role-name">지원형 노마드</span>
+                    <span class="role-desc">마법 지원, 치유, 기어 정비 등 다른 노마드를 보조하는 역할입니다. 마력 친화력과 기술 숙련도가 필요합니다.</span>
+                </li>
+                <li>
+                    <span class="role-name">정보형 노마드</span>
+                    <span class="role-desc">각국 정세 파악, 비밀 의뢰 수행, 외교적 임무 등을 수행합니다. 사교성과 정보 처리 능력이 요구됩니다.</span>
+                </li>
+            </ul>
+
+            <h2 id="grades">임무 등급</h2>
+            <p>기어 노마드의 임무는 위험도와 난이도에 따라 네 등급으로 구분됩니다. 노마드 증서 등급이 낮으면 상위 등급 임무를 단독 수주할 수 없습니다.</p>
+            <div class="grade-grid">
+                <div class="grade-card grade-C">
+                    <span class="grade-label">C</span>
+                    <span class="grade-name">일반 등급</span>
+                    <span class="grade-desc">초보 노마드도 수행 가능한 일상적 의뢰. 지역 순찰, 소규모 이계 생물 퇴치 등.</span>
+                </div>
+                <div class="grade-card grade-B">
+                    <span class="grade-label">B</span>
+                    <span class="grade-name">주의 등급</span>
+                    <span class="grade-desc">일정 경험이 필요한 의뢰. 소규모 이계 통로 봉인, 중형 이계 생물 처치 등.</span>
+                </div>
+                <div class="grade-card grade-A">
+                    <span class="grade-label">A</span>
+                    <span class="grade-name">위험 등급</span>
+                    <span class="grade-desc">숙련 노마드 전용. 대규모 이계 사건 대응, 유적 심층 탐사, 강력한 이계 개체 처치.</span>
+                </div>
+                <div class="grade-card grade-S">
+                    <span class="grade-label">S</span>
+                    <span class="grade-name">극비 등급</span>
+                    <span class="grade-desc">최고 수준의 위협에 대응. 금지구역 관련 임무, 대형 이계 침략 저지 등. 극소수만 수행 가능.</span>
+                </div>
+            </div>
+
+            <h2 id="cert">노마드 증서</h2>
+            <p><strong>노마드 증서</strong>는 기어 노마드로서의 공인된 신분을 나타내는 문서입니다. 각국의 노마드 길드에서 발급하며, 대륙 어디서나 통용됩니다.</p>
+            <p>증서에는 소지자의 이름, 종족, 전문 분야, 현재 등급이 기재되며, 임무 수행 실적에 따라 등급이 승급됩니다. C등급에서 시작하여 실적을 쌓으면 B → A → S로 올라갑니다. 단, 임무 실패나 규약 위반 시 등급이 강등될 수 있습니다.</p>
+
+            <h2 id="howto">참여 방법 (PC 지원 절차)</h2>
+            <ul class="step-list">
+                <li><span><strong>세계관 파악</strong> — 이 페이지와 세계관 입문을 읽고 베네티시아의 기본 설정을 이해합니다.</span></li>
+                <li><span><strong>종족·국가 선택</strong> — 자료실의 캐릭터 제작 가이드를 참고하여 종족과 출신 국가를 결정합니다.</span></li>
+                <li><span><strong>캐릭터 시트 작성</strong> — GM에게 전달할 캐릭터 배경과 능력치를 설정합니다.</span></li>
+                <li><span><strong>GM 제출 및 승인</strong> — 완성된 캐릭터 시트를 GM에게 제출하고 피드백을 받습니다.</span></li>
+                <li><span><strong>노마드 증서 발급</strong> — 승인 후 C등급 노마드 증서가 발급되고 세션 참여가 가능해집니다.</span></li>
+            </ul>
+
+        </article>
+    </div>
+
+    <footer>
+        <p class="footer-logo">BENETISIA</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
+    </footer>
+
+</body>
+</html>

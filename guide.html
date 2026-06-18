@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료실 — BENETISIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .guide-section { margin-bottom: 3rem; }
+        .checklist { list-style: none; margin: 1rem 0; }
+        .checklist li { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-dim); font-size: 0.9rem; line-height: 1.7; }
+        .checklist li:last-child { border-bottom: none; }
+        .check-box { width: 18px; height: 18px; border: 1.5px solid var(--border); flex-shrink: 0; margin-top: 0.25rem; display: flex; align-items: center; justify-content: center; }
+        .nation-pick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin: 1rem 0; }
+        .pick-card { background: var(--bg2); border: 1px solid var(--border); border-top: 3px solid var(--c, var(--gold)); padding: 1rem; }
+        .pick-card h4 { font-family: var(--f-title); font-size: 0.8rem; color: var(--text); letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+        .pick-card p { font-size: 0.8rem; color: var(--text-dim); line-height: 1.65; margin: 0; }
+        .faq-list { margin: 1rem 0; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+        .faq-q { font-weight: 600; color: var(--text); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .faq-q::before { content: 'Q. '; color: var(--gold); font-family: var(--f-title); }
+        .faq-a { font-size: 0.88rem; color: var(--text-dim); line-height: 1.75; padding-left: 1.2rem; }
+        @media (max-width: 640px) { .nation-pick { grid-template-columns: 1fr 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="main-nav">
+            <a class="nav-logo" href="index.html">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                    <polygon points="20,2 38,20 20,38 2,20" stroke="#c8a84c" stroke-width="1.5" fill="none"/>
+                    <polygon points="20,8 32,20 20,32 8,20" stroke="#c8a84c" stroke-width="1" fill="rgba(200,168,76,0.08)"/>
+                    <circle cx="20" cy="20" r="3" fill="#c8a84c"/>
+                </svg>
+                <span class="logo-text">
+                    <span class="logo-main">BENETISIA</span>
+                    <span class="logo-sub">Official Archive</span>
+                </span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="lore.html">세계관</a></li>
+                <li><a href="nations.html">국가</a></li>
+                <li><a href="factions.html">세력</a></li>
+                <li><a href="races.html">종족</a></li>
+                <li><a href="characters.html">인물</a></li>
+                <li><a href="gear-nomad.html">기어 노마드</a></li>
+                <li><a href="guide.html" class="active">자료실</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <h1>자료실</h1>
+        <p>베네티시아 입문 가이드 및 캐릭터 제작 자료</p>
+    </div>
+
+    <div style="max-width:1100px; margin:0 auto; padding:3rem 2rem 5rem;">
+
+        <div class="guide-section">
+            <h2 style="font-family:var(--f-title); font-size:1rem; letter-spacing:0.1em; color:var(--black); padding-bottom:0.6rem; border-bottom:2px solid var(--gold); margin-bottom:1.5rem;">베네티시아란?</h2>
+            <p style="font-size:0.95rem; line-height:1.95; color:var(--text); margin-bottom:1rem;">베네티시아는 기계문명과 마법, 그리고 이계가 공존하는 판타지 세계관을 배경으로 한 TRPG 세션용 아카이브입니다. 이 사이트는 세계관 설정, 국가·종족·세력 정보, 기어 노마드 프로젝트 안내 등을 제공합니다.</p>
+            <p style="font-size:0.95rem; line-height:1.95; color:var(--text);">처음이라면 <a href="lore.html" style="color:var(--gold); text-decoration:none;">세계관 입문</a> 페이지부터 시작하세요. 대략적인 세계의 역사와 핵심 개념을 파악할 수 있습니다.</p>
+        </div>
+
+        <div class="guide-section">
+            <h2 style="font-family:var(--f-title); font-size:1rem; letter-spacing:0.1em; color:var(--black); padding-bottom:0.6rem; border-bottom:2px solid var(--gold); margin-bottom:1.5rem;">캐릭터 제작 체크리스트</h2>
+            <p style="font-size:0.88rem; color:var(--text-dim); margin-bottom:1rem;">PC 캐릭터를 만들기 전에 아래 항목을 순서대로 확인하세요.</p>
+            <ul class="checklist">
+                <li><span class="check-box"></span><span><strong>세계관 기초 파악</strong> — 혼란기, 이계, 기어 노마드 등 기본 개념을 이해했는가?</span></li>
+                <li><span class="check-box"></span><span><strong>종족 선택</strong> — 인간 / 수인 / 영물 / 인조인간 / 이계인 / 천사 중 하나를 선택했는가?</span></li>
+                <li><span class="check-box"></span><span><strong>출신 국가 선택</strong> — 캐릭터가 성장한 국가 또는 주요 활동 국가를 정했는가?</span></li>
+                <li><span class="check-box"></span><span><strong>세력 소속 여부</strong> — 슈아비스·세리로프·아쿠마구미 등 소속 세력이 있는가? (없어도 무방)</span></li>
+                <li><span class="check-box"></span><span><strong>기어 노마드 등급</strong> — 기어 노마드 참여 캐릭터의 경우 C등급에서 시작함을 인지했는가?</span></li>
+                <li><span class="check-box"></span><span><strong>캐릭터 배경 스토리</strong> — 혼란기와 현재 사회와의 접점, 기어 노마드가 된 동기 등을 설정했는가?</span></li>
+                <li><span class="check-box"></span><span><strong>GM 제출</strong> — 완성된 캐릭터 시트를 GM에게 전달하고 승인을 받았는가?</span></li>
+            </ul>
+        </div>
+
+        <div class="guide-section">
+            <h2 style="font-family:var(--f-title); font-size:1rem; letter-spacing:0.1em; color:var(--black); padding-bottom:0.6rem; border-bottom:2px solid var(--gold); margin-bottom:1.5rem;">국가 선택 가이드</h2>
+            <p style="font-size:0.88rem; color:var(--text-dim); margin-bottom:1rem;">어떤 성향의 캐릭터를 원하는지에 따라 출신 국가를 고를 수 있습니다.</p>
+            <div class="nation-pick">
+                <div class="pick-card" style="--c:#e07a30">
+                    <h4>로이람</h4>
+                    <p>군인·전사 성향. 강한 육체와 규율을 중시하는 캐릭터에 적합.</p>
+                </div>
+                <div class="pick-card" style="--c:#4a8aaa">
+                    <h4>글리세 학회</h4>
+                    <p>학자·마법사 성향. 지식과 마법 연구를 중시하는 캐릭터에 적합.</p>
+                </div>
+                <div class="pick-card" style="--c:#8a5a2a">
+                    <h4>반-로므</h4>
+                    <p>수인 왕국. 강력한 신체 능력과 자연 친화적 캐릭터에 적합.</p>
+                </div>
+                <div class="pick-card" style="--c:#7a3aaa">
+                    <h4>테스모스</h4>
+                    <p>상인·이계인 공존 도시. 다양한 배경의 혼혈·이계 관련 캐릭터에 적합.</p>
+                </div>
+                <div class="pick-card" style="--c:#3a8a6a">
+                    <h4>반로므 / 로스웨니</h4>
+                    <p>자연 친화·영물 성향. 조용하고 신비로운 캐릭터에 적합.</p>
+                </div>
+                <div class="pick-card" style="--c:#c8c8e8">
+                    <h4>아크뉴엘</h4>
+                    <p>천사족 중심. 전투 민족 출신이거나 태엽의 신을 따르는 캐릭터에 적합.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2 style="font-family:var(--f-title); font-size:1rem; letter-spacing:0.1em; color:var(--black); padding-bottom:0.6rem; border-bottom:2px solid var(--gold); margin-bottom:1.5rem;">자주 묻는 질문</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <p class="faq-q">어느 국가 출신이든 기어 노마드가 될 수 있나요?</p>
+                    <p class="faq-a">네, 기어 노마드는 특정 국가에 예속되지 않는 독립적인 체계입니다. 어느 국가 출신이든, 어느 종족이든 지원 가능합니다. 단 금지 세력(이계 대규모 침략 세력 등)에 소속된 경우 제한이 있을 수 있습니다.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">마법을 쓰지 못하는 캐릭터도 가능한가요?</p>
+                    <p class="faq-a">물론입니다. 로이람 출신 캐릭터처럼 마법을 전혀 사용하지 않는 순수 전투·기술 특화 캐릭터도 충분히 활동할 수 있습니다. 오히려 마법 없이도 강한 캐릭터라는 독자적인 매력이 있습니다.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">이계인 캐릭터를 만들 수 있나요?</p>
+                    <p class="faq-a">가능하지만, 이계인은 대륙에서 다양한 시선을 받습니다. 테스모스처럼 공존을 추구하는 국가에서는 비교적 자유롭지만, 로이람 같은 곳에서는 주의가 필요합니다. GM과 미리 협의하는 것을 권장합니다.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">금지구역에 들어갈 수 있나요?</p>
+                    <p class="faq-a">금지구역은 매우 위험한 S등급 임무 구역입니다. 일반 C등급 노마드는 접근이 권고되지 않으며, S등급 의뢰를 통해서만 공식적으로 탐사가 가능합니다. 물론 비공식적인 침입을 시도하는 캐릭터 설정도 가능합니다만, 그에 상응하는 위험이 따릅니다.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p class="footer-logo">BENETISIA</p>
+        <p class="footer-sub">Official Archive — World & Character Reference</p>
+    </footer>
+
+</body>
+</html>
