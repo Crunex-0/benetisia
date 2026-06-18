@@ -133,6 +133,15 @@ body {
     text-overflow: ellipsis;
 }
 
+/* Scrollbar — webkit */
+.search-dropdown::-webkit-scrollbar       { width: 5px; }
+.search-dropdown::-webkit-scrollbar-track { background: #08060f; }
+.search-dropdown::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.13); }
+.search-dropdown::-webkit-scrollbar-thumb:hover { background: rgba(200,168,76,0.6); }
+
+/* Scrollbar — firefox */
+.search-dropdown { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.13) #08060f; }
+
 .search-empty {
     padding: 1.1rem;
     font-size: 0.82rem;
