@@ -339,11 +339,17 @@
         au.volume = S.muted ? 0 : S.vol;
         au.load();
 
-        au.addEventListener('canplay', function onReady() {
-            au.removeEventListener('canplay', onReady);
-            if (S.time > 1 && isFinite(au.duration) && S.time < au.duration) {
+        // loadedmetadata: duration 확정 후 위치 복원
+        au.addEventListener('loadedmetadata', function onMeta() {
+            au.removeEventListener('loadedmetadata', onMeta);
+            if (S.time > 1) {
                 au.currentTime = S.time;
             }
+        }, { once: true });
+
+        // canplay: 재생 준비 완료 후 재생 시작
+        au.addEventListener('canplay', function onReady() {
+            au.removeEventListener('canplay', onReady);
             if (S.playing) {
                 au.play().catch(() => { S.playing = false; writeLS(); });
             }
