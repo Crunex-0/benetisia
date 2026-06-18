@@ -274,6 +274,53 @@
 .tag-info    { background: #e8f0f8; color: #1a4a8a; border: 1px solid #a0c0e0; }
 .tag-update  { background: #e8f8ee; color: #1a7a3a; border: 1px solid #a0d8b0; }
 
+/* ── Explore Grid ── */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+}
+
+.explore-card {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.95rem 1.1rem;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--ec, var(--gold));
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.15s;
+}
+
+.explore-card:hover { background: var(--bg3); }
+
+.explore-mark {
+    font-size: 1.25rem;
+    color: var(--ec, var(--gold));
+    opacity: 0.65;
+    flex-shrink: 0;
+}
+
+.explore-name {
+    display: block;
+    font-family: var(--f-title);
+    font-size: 0.83rem;
+    color: var(--text);
+    letter-spacing: 0.03em;
+    margin-bottom: 0.15rem;
+    transition: color 0.15s;
+}
+
+.explore-card:hover .explore-name { color: var(--ec, var(--gold)); }
+
+.explore-sub {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+}
+
 /* ── Sidebar ── */
 .content-sidebar { position: sticky; top: calc(var(--nav-h) + 1rem); }
 
@@ -402,7 +449,7 @@
 /* ── Quick Links ── */
 .quicklinks {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
 }
 
