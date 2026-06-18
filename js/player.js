@@ -35,6 +35,15 @@
         }, 250);
     }
 
+    function flushLS() {
+        clearTimeout(_lsTimer);
+        S.time = au.currentTime;
+        try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) {}
+    }
+
+    // 페이지 이동 직전 재생 위치 즉시 저장
+    window.addEventListener('beforeunload', flushLS);
+
     // ── Audio engine ─────────────────────────────────────────────
     const au = new Audio();
     let tracks = [];
