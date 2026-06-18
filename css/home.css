@@ -113,7 +113,7 @@
 .content-layout {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2.5rem 2rem 4rem;
+    padding: 2.5rem 2rem 2rem;
     display: grid;
     grid-template-columns: 1fr 290px;
     gap: 2rem;
@@ -402,7 +402,7 @@
 /* ── Quick Links ── */
 .quicklinks {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
 }
 

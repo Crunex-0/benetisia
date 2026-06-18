@@ -32,9 +32,8 @@
         .step-list li span { font-size: 0.9rem; line-height: 1.75; color: var(--text); }
         .step-list li span strong { color: var(--gold); }
         @media (max-width: 640px) { .grade-grid { grid-template-columns: repeat(2, 1fr); } }
-        /* aside 전체를 sticky로, 개별 info-box는 static — 겹침 방지 */
+        /* aside를 sticky 단위로 묶음 */
         .wiki-body > aside { position: sticky; top: calc(var(--nav-h) + 1.5rem); align-self: start; }
-        .wiki-body > aside .info-box { position: static; }
     </style>
 </head>
 <body>
@@ -81,7 +80,7 @@
 
     <div class="wiki-body">
         <aside>
-            <div class="info-box">
+            <div class="info-box" style="position:static;">
                 <h3>목차</h3>
                 <ul class="gn-toc">
                     <li><a href="#overview">프로젝트 개요</a></li>
@@ -91,7 +90,7 @@
                     <li><a href="#howto">참여 방법</a></li>
                 </ul>
             </div>
-            <div class="info-box" style="margin-top:1rem;">
+            <div class="info-box" style="margin-top:1rem; position:static;">
                 <h3>기본 정보</h3>
                 <table>
                     <tr><th>형태</th><td>모험가 의뢰 체계</td></tr>
