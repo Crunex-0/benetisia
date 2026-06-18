@@ -133,12 +133,15 @@ body {
     text-overflow: ellipsis;
 }
 
-/* Scrollbar */
-.search-dropdown::-webkit-scrollbar              { width: 6px; }
-.search-dropdown::-webkit-scrollbar-track        { background: #0d0b18; }
-.search-dropdown::-webkit-scrollbar-thumb        { background: rgba(255,255,255,0.32); }
-.search-dropdown::-webkit-scrollbar-thumb:hover  { background: rgba(200,168,76,0.75); }
-.search-dropdown { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.32) #0d0b18; }
+/* Scrollbar — webkit (Chrome/Edge/Safari) */
+.search-dropdown::-webkit-scrollbar             { width: 6px; }
+.search-dropdown::-webkit-scrollbar-track       { background: #0d0b18; }
+.search-dropdown::-webkit-scrollbar-thumb       { background: rgba(255,255,255,0.35); border-radius: 0; }
+.search-dropdown::-webkit-scrollbar-thumb:hover { background: rgba(200,168,76,0.8); }
+/* Firefox */
+@supports (-moz-appearance: none) {
+    .search-dropdown { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.35) #0d0b18; }
+}
 
 .search-empty {
     padding: 1.1rem;
