@@ -428,6 +428,16 @@ footer {
 
 .bgm-m-btn:hover { color: var(--gold-lt); }
 
+.bgm-m-play.bgm-wait {
+    animation: bgm-wait-pulse 1.4s ease-in-out infinite;
+    color: var(--gold-lt);
+}
+
+@keyframes bgm-wait-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+}
+
 .bgm-m-name {
     background: none;
     border: none;

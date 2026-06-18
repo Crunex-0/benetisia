@@ -93,7 +93,41 @@
         renderPopupCtrl();
     }
 
+    // ── Autoplay-policy fallback: play on first user interaction ──
+    let _resumeOnInteraction = null;
+
+    function scheduleResumeOnInteraction() {
+        cancelResumeOnInteraction();
+        function resume() {
+            cancelResumeOnInteraction();
+            if (S.playing) return;
+            au.play().then(() => {
+                S.playing = true;
+                writeLS();
+                renderMini();
+                renderPopupCtrl();
+            }).catch(() => {});
+        }
+        _resumeOnInteraction = resume;
+        document.addEventListener('click',      resume);
+        document.addEventListener('keydown',    resume);
+        document.addEventListener('touchstart', resume);
+        const btn = document.querySelector('.bgm-m-play');
+        if (btn) btn.classList.add('bgm-wait');
+    }
+
+    function cancelResumeOnInteraction() {
+        if (!_resumeOnInteraction) return;
+        document.removeEventListener('click',      _resumeOnInteraction);
+        document.removeEventListener('keydown',    _resumeOnInteraction);
+        document.removeEventListener('touchstart', _resumeOnInteraction);
+        _resumeOnInteraction = null;
+        const btn = document.querySelector('.bgm-m-play');
+        if (btn) btn.classList.remove('bgm-wait');
+    }
+
     function togglePlay() {
+        cancelResumeOnInteraction();
         if (!tracks.length) return;
         if (!au.src || au.src === location.href) { goTo(S.idx, true); return; }
         if (S.playing) { au.pause(); S.playing = false; }
@@ -371,18 +405,24 @@
         au.load();
 
         au.addEventListener('loadedmetadata', function onMeta() {
+            function tryPlay() {
+                au.play().catch(err => {
+                    S.playing = false;
+                    writeLS();
+                    if (err.name === 'NotAllowedError') scheduleResumeOnInteraction();
+                });
+            }
             if (seekTo > 1) {
-                // seek 완료 후 재생 — seek 전에 play하면 0초부터 시작하는 버그 방지
                 au.currentTime = seekTo;
                 if (S.playing) {
                     au.addEventListener('seeked', function () {
-                        au.play().catch(() => { S.playing = false; writeLS(); });
+                        tryPlay();
                         renderMini();
                     }, { once: true });
                     return;
                 }
             } else if (S.playing) {
-                au.play().catch(() => { S.playing = false; writeLS(); });
+                tryPlay();
             }
             renderMini();
         }, { once: true });
