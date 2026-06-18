@@ -34,6 +34,9 @@
         @media (max-width: 640px) { .grade-grid { grid-template-columns: repeat(2, 1fr); } }
         /* aside를 sticky 단위로 묶음 */
         .wiki-body > aside { position: sticky; top: calc(var(--nav-h) + 1.5rem); align-self: start; }
+        @media (max-width: 768px) {
+            .wiki-body > aside { position: static; align-self: auto; }
+        }
     </style>
 </head>
 <body>

@@ -383,8 +383,21 @@ footer {
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-    .wiki-body { grid-template-columns: 1fr; }
+    .wiki-body {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.2rem 3rem;
+        gap: 0;
+    }
+    /* 본문 먼저, aside는 맨 아래 */
+    .wiki-body > article { order: 1; }
+    .wiki-body > aside   { order: 2; margin-top: 2.5rem; position: static; }
     .info-box { position: static; }
+    /* aside 두 박스를 좌우로 나란히 */
+    .wiki-body > aside {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 760px) {
